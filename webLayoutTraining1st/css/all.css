@@ -122,6 +122,9 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+a {
+  text-decoration: none;
+}
 
 .block {
   display: block;
@@ -141,6 +144,10 @@ table {
 
 .mb-2 {
   margin-bottom: 16px;
+}
+
+.pr-2 {
+  padding-right: 16px;
 }
 
 .pt-3 {
@@ -254,6 +261,14 @@ table {
 
 .contact li {
   font-size: 24px;
+}
+
+.contact li a {
+  color: white;
+}
+
+.contact li a:hover {
+  color: gray;
 }
 
 .footer {
