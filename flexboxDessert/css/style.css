@@ -1,0 +1,257 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.bg-mint {
+  background: #eaf0ed;
+}
+
+.wrap {
+  width: 940px;
+  margin: 0 auto;
+}
+
+.navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 30px 0;
+}
+
+.nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.nav .nav-list {
+  padding: 10px 30px 8px;
+}
+
+.nav .nav-list:hover {
+  font-weight: bold;
+  border-bottom: 2px solid #3f5d45;
+}
+
+.nav .nav-list a {
+  display: block;
+  color: #3f5d45;
+}
+
+.nav .nav-icon {
+  padding: 9px 0 7px 49px;
+}
+
+.products {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 60px 0;
+}
+
+.products .desserts-list {
+  width: 300px;
+  text-align: center;
+}
+
+.products .desserts-list li {
+  padding: 16px 0;
+  font-size: 24px;
+  border: 1px solid #eaf0ed;
+}
+
+.products .desserts-list li a {
+  color: #3f5d45;
+}
+
+.products .desserts-list li:first-child {
+  background: #3f5d45;
+}
+
+.products .desserts-list li:first-child a {
+  color: #eaf0ed;
+}
+
+.products .desserts-list li:hover {
+  background: rgba(0, 0, 0, 0.1);
+  color: black;
+}
+
+.products .desserts-list li:hover:first-child a {
+  color: black;
+}
+
+.products .desserts-box {
+  width: 640px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.products .desserts-box .desserts-card {
+  position: relative;
+  margin: 0 0 20px 20px;
+}
+
+.products .desserts-box .desserts-card img {
+  display: block;
+}
+
+.products .desserts-box .desserts-card .specail {
+  position: absolute;
+  -webkit-writing-mode: vertical-lr;
+      -ms-writing-mode: tb-lr;
+          writing-mode: vertical-lr;
+  top: 0;
+  left: 20px;
+  background: #3f5d45;
+  color: #ffffff;
+  font-size: 16px;
+  letter-spacing: 8px;
+  padding: 10px;
+}
+
+.products .desserts-box .desserts-card .icaon-heart {
+  position: absolute;
+  top: 19px;
+  right: 22px;
+}
+
+.products .desserts-box .desserts-card .desserts-detail {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 20px;
+  color: #3f5d45;
+  border: 1px solid #eaf0ed;
+}
+
+.products .desserts-box .desserts-card .desserts-detail li {
+  padding: 14px;
+}
+
+.products .desserts-box .desserts-card .desserts-detail li.name {
+  padding: 14px 33px;
+}
+
+.products .desserts-box .desserts-card .desserts-detail li.price {
+  padding: 14px 20px 14px 25px;
+  border-left: 1px solid #eaf0ed;
+  font-weight: bold;
+}
+
+.products .desserts-box .desserts-card .cart-btn {
+  padding: 16px 90px;
+  font-size: 24px;
+  background: #eaf0ed;
+  color: #3f5d45;
+  text-align: center;
+  font-weight: bold;
+}
+
+.products .desserts-box .desserts-card .cart-btn:hover {
+  background: #3f5d45;
+  color: #eaf0ed;
+}
+
+.products .desserts-box .pagination {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding-top: 30px;
+}
+
+.products .desserts-box .pagination .pagination-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.products .desserts-box .pagination .pagination-list li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 60px;
+  height: 60px;
+  border: 1px solid #eaf0ed;
+}
+
+.products .desserts-box .pagination .pagination-list li a {
+  color: #3f5d45;
+}
+
+.products .desserts-box .pagination .pagination-list .active {
+  background: #3f5d45;
+}
+
+.products .desserts-box .pagination .pagination-list .active a {
+  color: #eaf0ed;
+}
