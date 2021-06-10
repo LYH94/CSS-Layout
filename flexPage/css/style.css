@@ -238,7 +238,6 @@ a {
 }
 
 .form-container {
-  width: 100%;
   background: -webkit-gradient(linear, left top, left bottom, from(#206547), to(#2ba26f));
   background: linear-gradient(180deg, #206547 0%, #2ba26f 100%);
 }
