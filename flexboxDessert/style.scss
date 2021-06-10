@@ -96,18 +96,18 @@ a {
   .desserts-list {
     width: 300px;
     text-align: center;
+    .subTitle {
+      background: $green;
+      padding: 16px 0;
+      font-size: 24px;
+      color: $mint;
+    }
     li {
       padding: 16px 0;
       font-size: 24px;
       border: 1px solid $mint;
       a {
         color: $green;
-      }
-      &:first-child {
-        background: $green;
-        a {
-          color: $mint;
-        }
       }
       &:hover {
         background: rgba(0, 0, 0, 0.1);
@@ -194,6 +194,12 @@ a {
           border: 1px solid $mint;
           a {
             color: $green;
+          }
+          &:hover {
+            background: rgba(63, 93, 69, 0.1);
+            a {
+              color: $green;
+            }
           }
         }
         .active {

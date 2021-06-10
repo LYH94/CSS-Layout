@@ -110,6 +110,13 @@ a {
   text-align: center;
 }
 
+.products .desserts-list .subTitle {
+  background: #3f5d45;
+  padding: 16px 0;
+  font-size: 24px;
+  color: #eaf0ed;
+}
+
 .products .desserts-list li {
   padding: 16px 0;
   font-size: 24px;
@@ -118,14 +125,6 @@ a {
 
 .products .desserts-list li a {
   color: #3f5d45;
-}
-
-.products .desserts-list li:first-child {
-  background: #3f5d45;
-}
-
-.products .desserts-list li:first-child a {
-  color: #eaf0ed;
 }
 
 .products .desserts-list li:hover {
@@ -245,6 +244,14 @@ a {
 }
 
 .products .desserts-box .pagination .pagination-list li a {
+  color: #3f5d45;
+}
+
+.products .desserts-box .pagination .pagination-list li:hover {
+  background: rgba(63, 93, 69, 0.1);
+}
+
+.products .desserts-box .pagination .pagination-list li:hover a {
   color: #3f5d45;
 }
 
