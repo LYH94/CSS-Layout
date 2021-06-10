@@ -112,20 +112,20 @@ a {
 }
 
 .banner {
-  position: relative;
+  height: 346px;
+  display: flex;
+  align-items: center;
+  background: url("https://raw.githubusercontent.com/hexschool/HTMLHWSource/master/singlePage/banner.png") no-repeat center/cover;
 }
 
 .banner-text {
-  position: absolute;
   width: 100%;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 48px;
-  color: $white;
   background: rgba(0, 0, 0, 0.1);
   p {
     padding: 36px;
     line-height: 60px;
+    font-size: 48px;
+    color: $white;
   }
 }
 
@@ -136,53 +136,32 @@ a {
 .course {
   display: flex;
   justify-content: space-between;
-  .course-box {
-    width: 380px;
-    box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    img {
-      height: 100px;
-    }
-    h2 {
-      font-size: 20px;
-      padding-top: 8px;
-      text-align: center;
-      font-weight: bold;
-      margin: 10px 0;
-    }
-    p {
-      padding: 0 20px 20px 20px;
-    }
-  }
 }
 
-// .course-box {
-//   width: 400px;
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: space-between;
-//   box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.1);
-//   margin: 20px;
-//   padding: 20px;
-//   border-radius: 4px;
-//   h2 {
-//     font-size: 20px;
-//     padding-top: 8px;
-//     text-align: center;
-//     font-weight: bold;
-//     margin-bottom: 8px;
-//   }
-//   p {
-//     line-height: 20px;
-//   }
-//   ul {
-//     list-style-type: disc;
-//     padding-left: 20px;
-//   }
-// }
+.course-box {
+  width: 340px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.1);
+}
+
+.course-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 170px;
+}
+
+.course-text {
+  h2 {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
 
 .table {
   display: flex;
