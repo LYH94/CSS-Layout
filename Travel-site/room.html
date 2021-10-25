@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>一般訂房</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css' />
+  <!-- cdn連輪播的css -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+  <!-- cdn連動畫的css -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <!-- 這是主要的css -->
+  <link rel="stylesheet" href="./css/style.min.css">
+</head>
+
+<body>
+  <div id='app'>
+    <!-- 導覽列區 --------------------------------------------------------------------------------------------------------------------- -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-black-09">
+      <div class="container">
+        <a class="navbar-brand" href="/"><img src="./images/logo-w.png" width="100%" height="50" alt=""></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#wise-navbar"
+          aria-controls="wise-navbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="wise-navbar">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./about.html">認識知達</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                房型預訂
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="./room.html">一般訂房</a></li>
+                <li><a class="dropdown-item" href="./roompackage.html">套裝訂房</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./travel.html">微旅行</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./shop.html">購好物</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">周邊景點</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">達人手札</a>
+            </li>
+          </ul>
+          <!-- 登入/註冊 -->
+          <ul id="login_menu" class="navbar-nav menu-left ml-lg-3">
+            <li class="nav-item">
+              <a id="btn-login" class="nav-link" href="#login" data-bs-toggle="modal" data-bs-target="#user-login"><i
+                  class="fas fa-user fa-fw"></i>登入</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Modal 登入 -->
+    <div class="modal fade" id="user-login" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header text-center">
+            <div class="modal-title w-100 d-flex justify-content-center align-items-center"><img
+                src="./images/logo-b.png" class="me-3" width="90" alt=""><span class="fs-4 fw-bold">登入或註冊</span></div>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body py-7">
+            <form action="">
+              <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="loginEmail" name="loginEmail" placeholder=" 請輸入註冊信箱">
+                <label for="loginEmail">請輸入註冊信箱</label>
+              </div>
+              <div class="form-floating">
+                <input type="password" class="form-control" id="loginPassword" name="loginPassword"
+                  placeholder=" 請輸入密碼">
+                <label for="loginPassword">請輸入密碼</label>
+              </div>
+              <a href="#" class="my-3 d-block forget-pw">忘記密碼?</a>
+              <div class="d-grid gap-2">
+                <button class="btn btn-main-color fs-5 mb-1" type="button">登入</button>
+                <button class="btn btn-outline-main-color fs-5" type="button">註冊</button>
+              </div>
+            </form>
+            <!-- <div class="login-pseudo">
+              或
+            </div>
+            <div class="d-grid gap-2">
+              <a href="" class="btn btn-block btn-facebook mb-1">
+                <span class="fs-5"><i class="fab fa-facebook-square me-1"></i>用Facebook 帳號登入</span>
+              </a>
+              <a href="" class="btn btn-block btn-google">
+                <span class="fs-5"><i class="fab fa-google me-1"></i>用Google 帳號登入</span>
+              </a>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main-content">
+      <!-- parallax Banner -->
+      <div class="parallax">
+        <div class="room__parallax">
+          <div class="img-filter">
+            <div class="parallax-content">
+              <div class="parallax-title">一般訂房</div>
+              <div class="parallax-text">Reservation</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- search bar -->
+      <div class="container position-relative">
+        <form class="row search-bar">
+          <div class="col-6 col-lg-3 searchbar-border">
+            <label for="inputRoomType" class="form-label">房型</label>
+            <select id="inputRoomType" class="form-select">
+              <option selected>標準客房</option>
+              <option>標準雙人房</option>
+              <option>標準三人房</option>
+              <option>標準雙人房</option>
+            </select>
+          </div>
+          <div class="col-6 col-lg-2 order-lg-1">
+            <label for="inputRooms" class="form-label">間數</label>
+            <select id="inputRooms" class="form-select">
+              <option selected>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+            </select>
+          </div>
+          <div class="col-lg-5 searchbar-border">
+            <v-date-picker v-model="range" color="orange" is-range>
+              <template v-slot="{ inputValue, inputEvents }">
+                <div class="row ps-lg-5">
+                  <div class="col-6">
+                    <label for="inputCheckin" class="form-label">入住日期</label>
+                    <input :value="inputValue.start" v-on="inputEvents.start" class="form-control"
+                      placeholder="yyyy/mm/dd" />
+                  </div>
+                  <div class="col-6">
+                    <label for="inputCheckout" class="form-label">退房日期</label>
+                    <input :value="inputValue.end" v-on="inputEvents.end" class="form-control"
+                      placeholder="yyyy/mm/dd" />
+                  </div>
+                </div>
+              </template>
+            </v-date-picker>
+          </div>
+          <div class="col-lg-2 d-flex flex-fill justify-content-center align-items-center order-lg-2">
+            <a href="./roomdetail.html" class="btn btn-main-color w-100 search-bar__booking-btn fs-4">立刻預訂</a>
+          </div>
+        </form>
+      </div>
+      <!-- facility -->
+      <div class="container-fluid p-0 bg-gray-f5 room__overview">
+        <div class="container facility">
+          <div class="row section-content">
+            <div class="col-12">
+              <div class="room__searchbar-sort-board ">
+                <ul class="nav nav-scroll">
+                  <li class="nav-item">
+                    <a href="" class="nav-link">排序:
+                      <span class="gap">|</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <span>
+                      <a href="" class="nav-link active">
+                        <i class="fa fa-fire mr-2"></i>熱門程度
+                        <span class="gap">|</span>
+                      </a>
+                    </span>
+                  </li>
+                  <li class="nav-item">
+                    <a href="" class="nav-link">
+                      <i class="fa fa-star mr-2"></i>關聯性
+                      <span class="gap">|</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="" class="nav-link">
+                      <i class="fa fa-fire mr-2"></i>價格：低到高
+                      <span class="gap">|</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="" class="nav-link">
+                      <i class="fa fa-fire mr-2"></i>價格：低到高</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <a href="./roomdetail.html" class="d-flex flex-column h-100">
+                <div>
+                  <div class="swiper cardImgSwiper">
+                    <div class="swiper-wrapper room__card-img">
+                      <div class="swiper-slide">
+                        <img src="https://pix8.agoda.net/hotelImages/443/443206/443206_15062616420031004505.jpg" alt="">
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="https://www.booking-wise0.com.tw/Zhida/hotel/images/room/8_101thumb.jpg" alt="">
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="https://www.booking-wise0.com.tw/Zhida/hotel/images/room/6_101thumb.jpg" alt="">
+                      </div>
+                    </div>
+                    <div class="swiper-button-next cardImgSwiper-button-next"></div>
+                    <div class="swiper-button-prev cardImgSwiper-button-prev"></div>
+                  </div>
+                </div>
+                <div class="room__card-body bg-white p-3 mb-3 mb-md-7">
+                  <div class="room-facility d-flex overflow-hidden">
+                    <div class="room__card-tag"><i class="fas fa-bed me-1"></i><span>雙人床</span></div>
+                    <div class="room__card-tag"><i class="fas fa-coffee me-1"></i><span>附早餐</span></div>
+                    <div class="room__card-tag"><i class="fas fa-wifi me-1"></i><span>WiFi</span></div>
+                  </div>
+                  <h5 class="card-title ellipsis">標準客房</h5>
+                  <div class="card-text pb-3">
+                    <div class="text-more-three-line text-gray-777">
+                      每間客房之床頭工藝設計版皆為不同工藝材質與設計手法，設計獨一無二，您可細心欣賞都可以發現不同的藝術美學，讓您每每入住都有不同的住宿體驗。</div>
+                  </div>
+                  <div class="room__card-body-footer d-flex justify-content-between"><span
+                      class="text-main-color">TWD</span>
+                    <h4 class="text-main-color">
+                      34,500
+                    </h4>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <a href="./roomdetail.html" class="d-flex flex-column h-100">
+                <div>
+                  <div class="swiper cardImgSwiper">
+                    <div class="swiper-wrapper room__card-img">
+                      <div class="swiper-slide">
+                        <img src="https://pix8.agoda.net/hotelImages/443/443206/443206_15062616420031004505.jpg" alt="">
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="https://www.booking-wise0.com.tw/Zhida/hotel/images/room/8_101thumb.jpg" alt="">
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="https://www.booking-wise0.com.tw/Zhida/hotel/images/room/6_101thumb.jpg" alt="">
+                      </div>
+                    </div>
+                    <div class="swiper-button-next cardImgSwiper-button-next"></div>
+                    <div class="swiper-button-prev cardImgSwiper-button-prev"></div>
+                  </div>
+                </div>
+                <div class="room__card-body bg-white p-3 mb-3 mb-md-7">
+                  <div class="room-facility d-flex overflow-hidden">
+                    <div class="room__card-tag"><i class="fas fa-bed me-1"></i><span>雙人床</span></div>
+                    <div class="room__card-tag"><i class="fas fa-coffee me-1"></i><span>附早餐</span></div>
+                    <div class="room__card-tag"><i class="fas fa-wifi me-1"></i><span>WiFi</span></div>
+                  </div>
+                  <h5 class="card-title ellipsis">標準客房</h5>
+                  <div class="card-text pb-3">
+                    <div class="text-more-three-line text-gray-777">
+                      每間客房之床頭工藝設計版皆為不同工藝材質與設計手法，設計獨一無二，您可細心欣賞都可以發現不同的藝術美學，讓您每每入住都有不同的住宿體驗。</div>
+                  </div>
+                  <div class="room__card-body-footer d-flex justify-content-between"><span
+                      class="text-main-color">TWD</span>
+                    <h4 class="text-main-color">
+                      34,500
+                    </h4>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <a href="./roomdetail.html" class="d-flex flex-column h-100">
+                <div>
+                  <div class="swiper cardImgSwiper">
+                    <div class="swiper-wrapper room__card-img">
+                      <div class="swiper-slide">
+                        <img src="https://pix8.agoda.net/hotelImages/443/443206/443206_15062616420031004505.jpg" alt="">
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="https://www.booking-wise0.com.tw/Zhida/hotel/images/room/8_101thumb.jpg" alt="">
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="https://www.booking-wise0.com.tw/Zhida/hotel/images/room/6_101thumb.jpg" alt="">
+                      </div>
+                    </div>
+                    <div class="swiper-button-next cardImgSwiper-button-next"></div>
+                    <div class="swiper-button-prev cardImgSwiper-button-prev"></div>
+                  </div>
+                </div>
+                <div class="room__card-body bg-white p-3 mb-3 mb-md-7">
+                  <div class="room-facility d-flex overflow-hidden">
+                    <div class="room__card-tag"><i class="fas fa-bed me-1"></i><span>雙人床</span></div>
+                    <div class="room__card-tag"><i class="fas fa-coffee me-1"></i><span>附早餐</span></div>
+                    <div class="room__card-tag"><i class="fas fa-wifi me-1"></i><span>WiFi</span></div>
+                  </div>
+                  <h5 class="card-title ellipsis">標準客房</h5>
+                  <div class="card-text pb-3">
+                    <div class="text-more-three-line text-gray-777">
+                      每間客房之床頭工藝設計版皆為不同工藝材質與設計手法，設計獨一無二，您可細心欣賞都可以發現不同的藝術美學，讓您每每入住都有不同的住宿體驗。</div>
+                  </div>
+                  <div class="room__card-body-footer d-flex justify-content-between"><span
+                      class="text-main-color">TWD</span>
+                    <h4 class="text-main-color">
+                      34,500
+                    </h4>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <a href="./roomdetail.html" class="d-flex flex-column h-100">
+                <div>
+                  <div class="swiper cardImgSwiper">
+                    <div class="swiper-wrapper room__card-img">
+                      <div class="swiper-slide">
+                        <img src="https://pix8.agoda.net/hotelImages/443/443206/443206_15062616420031004505.jpg" alt="">
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="https://www.booking-wise0.com.tw/Zhida/hotel/images/room/8_101thumb.jpg" alt="">
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="https://www.booking-wise0.com.tw/Zhida/hotel/images/room/6_101thumb.jpg" alt="">
+                      </div>
+                    </div>
+                    <div class="swiper-button-next cardImgSwiper-button-next"></div>
+                    <div class="swiper-button-prev cardImgSwiper-button-prev"></div>
+                  </div>
+                </div>
+                <div class="room__card-body bg-white p-3 mb-3 mb-md-7">
+                  <div class="room-facility d-flex overflow-hidden">
+                    <div class="room__card-tag"><i class="fas fa-bed me-1"></i><span>雙人床</span></div>
+                    <div class="room__card-tag"><i class="fas fa-coffee me-1"></i><span>附早餐</span></div>
+                    <div class="room__card-tag"><i class="fas fa-wifi me-1"></i><span>WiFi</span></div>
+                  </div>
+                  <h5 class="card-title ellipsis">標準客房</h5>
+                  <div class="card-text pb-3">
+                    <div class="text-more-three-line text-gray-777">
+                      每間客房之床頭工藝設計版皆為不同工藝材質與設計手法，設計獨一無二，您可細心欣賞都可以發現不同的藝術美學，讓您每每入住都有不同的住宿體驗。</div>
+                  </div>
+                  <div class="room__card-body-footer d-flex justify-content-between"><span
+                      class="text-main-color">TWD</span>
+                    <h4 class="text-main-color">
+                      34,500
+                    </h4>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <a href="./roomdetail.html" class="d-flex flex-column h-100">
+                <div>
+                  <div class="swiper cardImgSwiper">
+                    <div class="swiper-wrapper room__card-img">
+                      <div class="swiper-slide">
+                        <img src="https://pix8.agoda.net/hotelImages/443/443206/443206_15062616420031004505.jpg" alt="">
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="https://www.booking-wise0.com.tw/Zhida/hotel/images/room/8_101thumb.jpg" alt="">
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="https://www.booking-wise0.com.tw/Zhida/hotel/images/room/6_101thumb.jpg" alt="">
+                      </div>
+                    </div>
+                    <div class="swiper-button-next cardImgSwiper-button-next"></div>
+                    <div class="swiper-button-prev cardImgSwiper-button-prev"></div>
+                  </div>
+                </div>
+                <div
+                  class="room__card-body bg-white p-3 mb-3 mb-md-7 flex-grow-1 d-flex justify-content-between flex-column">
+                  <div class="room__card-content">
+                    <div class="room-facility d-flex overflow-hidden">
+                      <div class="room__card-tag"><i class="fas fa-bed me-1"></i><span>雙人床</span></div>
+                      <div class="room__card-tag"><i class="fas fa-coffee me-1"></i><span>附早餐</span></div>
+                      <div class="room__card-tag"><i class="fas fa-wifi me-1"></i><span>WiFi</span></div>
+                    </div>
+                    <h5 class="card-title ellipsis">標準客房</h5>
+                    <div class="card-text pb-3">
+                      <div class="text-more-three-line text-gray-777">
+                        每間客房之床頭工藝設計版皆為不同工藝材質與設計手法，設計獨一無二，您可細心欣賞都可以發現不同的藝術美學，讓您每每入住都有不同的住宿體驗。</div>
+                    </div>
+                  </div>
+                  <div class="room__card-body-footer d-flex justify-content-between"><span
+                      class="text-main-color">TWD</span>
+                    <h4 class="text-main-color">
+                      34,500
+                    </h4>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <a href="./roomdetail.html" class="d-flex flex-column h-100">
+                <div>
+                  <div class="swiper cardImgSwiper">
+                    <div class="swiper-wrapper room__card-img">
+                      <div class="swiper-slide">
+                        <img src="https://pix8.agoda.net/hotelImages/443/443206/443206_15062616420031004505.jpg" alt="">
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="https://www.booking-wise0.com.tw/Zhida/hotel/images/room/8_101thumb.jpg" alt="">
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="https://www.booking-wise0.com.tw/Zhida/hotel/images/room/6_101thumb.jpg" alt="">
+                      </div>
+                    </div>
+                    <div class="swiper-button-next cardImgSwiper-button-next"></div>
+                    <div class="swiper-button-prev cardImgSwiper-button-prev"></div>
+                  </div>
+                </div>
+                <div
+                  class="room__card-body bg-white p-3 mb-3 mb-md-7 flex-grow-1 d-flex justify-content-between flex-column">
+                  <div class="room__card-content">
+                    <div class="room-facility d-flex overflow-hidden">
+                      <div class="room__card-tag"><i class="fas fa-bed me-1"></i><span>雙人床</span></div>
+                      <div class="room__card-tag"><i class="fas fa-coffee me-1"></i><span>附早餐</span></div>
+                      <div class="room__card-tag"><i class="fas fa-wifi me-1"></i><span>WiFi</span></div>
+                    </div>
+                    <h5 class="card-title ellipsis">標準客房</h5>
+                  </div>
+                  <div class="room__card-body-footer d-flex justify-content-between"><span
+                      class="text-main-color">TWD</span>
+                    <h4 class="text-main-color">
+                      34,500
+                    </h4>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="d-flex justify-content-end">
+            <nav class="room__pagination">
+              <ul class="pagination">
+                <li class="page-item">
+                  <a class="page-link" href="#" aria-label="Previous">
+                    <i class="fas fa-chevron-left"></i>
+                  </a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                  <a class="page-link" href="#" aria-label="Next">
+                    <i class="fas fa-chevron-right"></i>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid">
+        <div class="container section-content">
+          <div class="section-header d-flex justify-content-center align-items-center">
+            <div class="fs-2 fw-bold">其他套裝行程推薦</div>
+          </div>
+          <div class="row custom-row-swiper g-2 g-lg-4 nav-scroll">
+            <div class="col">
+              <div class="room__recommend-img">
+                <img
+                  src="https://q-xx.bstatic.com/xdata/images/hotel/840x460/154391571.jpg?k=042e32bc154ec2a5cea266f084eeefd54136e2cdf43fa805f2eedd0fad993ac3&o="
+                  class="img-cover rounded-2" alt="">
+              </div>
+            </div>
+            <div class="col">
+              <div class="room__recommend-img">
+                <img
+                  src="data:image/jpeg;base64,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"
+                  class="img-cover rounded-2" alt="">
+              </div>
+            </div>
+            <div class="col">
+              <div class="room__recommend-img">
+                <img src="https://pix8.agoda.net/hotelImages/443/443206/443206_15062616400031004088.jpg?s=1024x768"
+                  class="img-cover rounded-2" alt="">
+              </div>
+            </div>
+            <div class="col">
+              <div class="room__recommend-img">
+                <img src="https://pix8.agoda.net/hotelImages/443/443206/443206_15062616400031004132.jpg?s=1024x768"
+                  class="img-cover rounded-2" alt="">
+              </div>
+            </div>
+            <div class="col">
+              <div class="room__recommend-img">
+                <img src="https://pix8.agoda.net/hotelImages/443/443206/443206_15062616400031004054.jpg?s=1024x768"
+                  class="img-cover rounded-2" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- footer -->
+    <footer class="container-fluid footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-2 footer-content d-flex justify-content-center align-items-center">
+            <div class="footer-logo">
+              <img src="./images/logo-w.png" alt="">
+            </div>
+          </div>
+          <div class="col-md-5 footer-content">
+            <p class="footer-title">聯絡我們</p>
+            <ul>
+              <li><a href="https://goo.gl/maps/vW9JAQNGSKtnqCPPA" target="_blank"><i
+                    class="footer-icon fas fa-map-marker-alt"></i>地址:
+                  54246南投縣草屯鎮中正路574號1樓</a></li>
+              <li><a href="tel:0910123456"><i class="footer-icon fas fa-phone-alt"></i>電話: 049-230-6969</a></li>
+              <li><a href="mailto:zhida.2306969@gmail.com"><i class="footer-icon far fa-envelope"></i>email:
+                  zhida.2306969@gmail.com</a></li>
+            </ul>
+          </div>
+          <div class="col-md-2 footer-content">
+            <p class="footer-title">探索</p>
+            <ul>
+              <li><a href="./about.html">認識我們</a></li>
+              <li><a href="">人員招募</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3 footer-content">
+            <p class="footer-title">追蹤我們</p>
+            <ul class="d-flex">
+              <li><a href="http://facebook.com"><i class="sns-icon fab fa-facebook"></i></a></li>
+              <li><a href="http://instagram.com"><i class="sns-icon fab fa-instagram"></i></a></li>
+              <li><i class="sns-icon fab fa-twitter"></i></li>
+              <li><i class="sns-icon fab fa-google-plus"></i></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <!-- cdn連bootstrap5的js -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- cdn連swiper輪播的js -->
+  <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+  <!-- cdn連vue的js -->
+  <script src='https://unpkg.com/vue/dist/vue.js'></script>
+  <!-- cdn連vue-calendar的js -->
+  <script src='https://unpkg.com/v-calendar'></script>
+  <!-- cdn連日期的js -->
+  <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+  <!-- cdn連動畫的js -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- 日期的js -->
+  <script src="./js/date.js"></script>
+  <!-- 輪播的js -->
+  <script src="./js/swiper.js"></script>
+  <!-- 主要的js -->
+  <script src="./js/main.js"></script>
+</body>
+
+</html>

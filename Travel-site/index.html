@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>首頁</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css' />
+  <!-- cdn連輪播的css -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+  <!-- cdn連動畫的css -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <!-- 這是主要的css -->
+  <link rel="stylesheet" href="./css/style.min.css">
+</head>
+
+<body>
+  <div id='app'>
+    <!-- 導覽列區 --------------------------------------------------------------------------------------------------------------------- -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-black-09">
+      <div class="container">
+        <a class="navbar-brand" href="/"><img src="./images/logo-w.png" width="100%" height="50" alt=""></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#wise-navbar"
+          aria-controls="wise-navbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="wise-navbar">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./about.html">認識知達</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                房型預訂
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="./room.html">一般訂房</a></li>
+                <li><a class="dropdown-item" href="./roompackage.html">套裝訂房</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./travel.html">微旅行</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./shop.html">購好物</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">周邊景點</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">達人手札</a>
+            </li>
+          </ul>
+          <!-- 登入/註冊 -->
+          <ul id="login_menu" class="navbar-nav menu-left ml-lg-3">
+            <li class="nav-item">
+              <a id="btn-login" class="nav-link" href="#login" data-bs-toggle="modal" data-bs-target="#user-login"><i
+                  class="fas fa-user fa-fw"></i>登入</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Modal 登入 -->
+    <div class="modal fade" id="user-login" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header text-center">
+            <div class="modal-title w-100 d-flex justify-content-center align-items-center"><img
+                src="./images/logo-b.png" class="me-3" width="90" alt=""><span class="fs-4 fw-bold">登入或註冊</span></div>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body py-7">
+            <form action="">
+              <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="loginEmail" name="loginEmail" placeholder=" 請輸入註冊信箱">
+                <label for="loginEmail">請輸入註冊信箱</label>
+              </div>
+              <div class="form-floating">
+                <input type="password" class="form-control" id="loginPassword" name="loginPassword"
+                  placeholder=" 請輸入密碼">
+                <label for="loginPassword">請輸入密碼</label>
+              </div>
+              <a href="#" class="my-3 d-block forget-pw">忘記密碼?</a>
+              <div class="d-grid gap-2">
+                <button class="btn btn-main-color fs-5 mb-1" type="button">登入</button>
+                <button class="btn btn-outline-main-color fs-5" type="button">註冊</button>
+              </div>
+            </form>
+            <!-- <div class="login-pseudo">
+              或
+            </div>
+            <div class="d-grid gap-2">
+              <a href="" class="btn btn-block btn-facebook mb-1">
+                <span class="fs-5"><i class="fab fa-facebook-square me-1"></i>用Facebook 帳號登入</span>
+              </a>
+              <a href="" class="btn btn-block btn-google">
+                <span class="fs-5"><i class="fab fa-google me-1"></i>用Google 帳號登入</span>
+              </a>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main-content">
+      <!-- Banner -->
+      <div class="swiper bannerSwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img
+              src="https://pix6.agoda.net/hotelImages/443/443206/443206_15062616400031004129.jpg?s=1024x768"></div>
+          <div class="swiper-slide"><img
+              src="https://exp.cdn-hotels.com/hotels/24000000/23060000/23059200/23059112/b9ffcfdb_z.jpg?impolicy=fcrop&w=1000&h=666&q=medium">
+          </div>
+          <div class="swiper-slide"><img
+              src="https://exp.cdn-hotels.com/hotels/24000000/23060000/23059200/23059112/595aad4a_z.jpg?impolicy=fcrop&w=1000&h=666&q=medium">
+          </div>
+          <div class="swiper-slide"><img
+              src="https://exp.cdn-hotels.com/hotels/24000000/23060000/23059200/23059112/f15ecb10_z.jpg?impolicy=fcrop&w=1000&h=666&q=medium">
+          </div>
+        </div>
+      </div>
+      <!-- search bar -->
+      <div class="container position-relative">
+        <form class="row search-bar">
+          <div class="col-6 col-lg-3 searchbar-border">
+            <label for="inputRoomType" class="form-label">房型</label>
+            <select id="inputRoomType" class="form-select">
+              <option selected>標準客房</option>
+              <option>標準雙人房</option>
+              <option>標準三人房</option>
+              <option>標準雙人房</option>
+            </select>
+          </div>
+          <div class="col-6 col-lg-2 order-lg-1">
+            <label for="inputRooms" class="form-label">間數</label>
+            <select id="inputRooms" class="form-select">
+              <option selected>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+            </select>
+          </div>
+          <div class="col-lg-5 searchbar-border">
+            <v-date-picker v-model="range" color="orange" is-range>
+              <template v-slot="{ inputValue, inputEvents }">
+                <div class="row ps-lg-5">
+                  <div class="col-6">
+                    <label for="inputCheckin" class="form-label">入住日期</label>
+                    <input :value="inputValue.start" v-on="inputEvents.start" class="form-control"
+                      placeholder="yyyy/mm/dd" />
+                  </div>
+                  <div class="col-6">
+                    <label for="inputCheckout" class="form-label">退房日期</label>
+                    <input :value="inputValue.end" v-on="inputEvents.end" class="form-control"
+                      placeholder="yyyy/mm/dd" />
+                  </div>
+                </div>
+              </template>
+            </v-date-picker>
+          </div>
+          <div class="col-lg-2 d-flex flex-fill align-items-center order-lg-2">
+            <a href="./search.html" class="btn btn-main-color w-100 search-bar__booking-btn fs-4">立刻預訂</a>
+          </div>
+        </form>
+      </div>
+      <!-- facility -->
+      <div class="container-fluid bg-gray-f5">
+        <div class="container facility">
+          <div class="section-content">
+            <div class="section-header">
+              <div class="description-header text-center fs-3 fw-bold">草屯知達工藝會館</div>
+            </div>
+            <div class="card">
+              <img src="https://pix6.agoda.net/hotelImages/443/443206/443206_15062616400031004067.jpg?s=1024x768"
+                class="imgFluid-bg img-cover" alt="...">
+              <div class="card-img-overlay">
+                <p class="card-text">
+                  同時致力將在地傳統文化藝術與工藝美學融入時尚潮流的休閒遊憩服務中，讓每一位客人都能深刻感受「頂真無價」「心享奢華」，工藝參訪導覽結合工藝體驗實作，打造一個「身、心、靈，絕佳五感」的住宿會館。</p>
+              </div>
+            </div>
+          </div>
+          <div class="section-content">
+            <div class="section-header">
+              <h2 class="title-pseudo">知達體驗</h2>
+            </div>
+            <div class="row g-0 home-intro">
+              <div class="col-md-6">
+                <img
+                  src="https://exp.cdn-hotels.com/hotels/24000000/23060000/23059200/23059112/271be16f_z.jpg?impolicy=fcrop&w=1000&h=666&q=medium"
+                  class="img-fluid img-cover" alt="">
+              </div>
+              <div class="col-md-6 d-flex justify-content-center flex-column align-items-center p-7">
+                <h3 class="description-header text-gold">工藝體驗</h3>
+                <div class="lh-base">
+                  同時致力將在地傳統文化藝術與工藝美學融入時尚潮流的休閒遊憩服務中，讓每一位客人都能深刻感受「頂真無價」「心享奢華」，工藝參訪導覽結合工藝體驗實作，打造一個「身、心、靈，絕佳五感」的住宿會館。</div>
+              </div>
+              <div class="col-md-6 order-md-2">
+                <img src="https://pix6.agoda.net/hotelImages/443/443206/443206_15062616400031004067.jpg?s=1024x768"
+                  class="img-fluid img-cover" alt="">
+              </div>
+              <div class="col-md-6 order-md-1 d-flex flex-column justify-content-center align-items-center p-7">
+                <h3 class="description-header text-gold">草屯知達工藝會館</h3>
+                <div class="lh-base">
+                  同時致力將在地傳統文化藝術與工藝美學融入時尚潮流的休閒遊憩服務中，讓每一位客人都能深刻感受「頂真無價」「心享奢華」，工藝參訪導覽結合工藝體驗實作，打造一個「身、心、靈，絕佳五感」的住宿會館。</div>
+              </div>
+            </div>
+          </div>
+          <div class="section-content">
+            <div class="section-header">
+              <h2 class="title-pseudo">精選行程</h2>
+            </div>
+            <div class="swiper-box px-sm-3 px-md-0">
+              <div class="swiper three-swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="card">
+                      <img
+                        src="https://www.booking-wise0.com.tw/zhida/zida/images/eatplay/%E7%8E%A9%E4%BB%80%E9%BA%BC%E7%85%A7%E7%89%871.jpg"
+                        class="card-img-top swiper_card-img" alt="">
+                      <div class="card-body">
+                        <h5 class="card-title text-more-two-line lh-sm itinerary-title">玩什麼Pla、觀摩、參訪之旅</h5>
+                        <p class="itinerary-time"><i class="far fa-calendar-alt me-2"></i>專案期間：2021/05/10 ~ 2021/09/30
+                        </p>
+                        <p class="itinerary-text">工藝文創體驗、學習、觀摩、參訪之旅</p>
+                        <a href="./package.html" class="btn btn-main-color d-block mt-3">點我看更多</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="card">
+                      <img
+                        src="https://www.booking-wise0.com.tw/zhida/zida/images/eatplay/%E7%8E%A9%E4%BB%80%E9%BA%BC%E7%85%A7%E7%89%871.jpg"
+                        class="card-img-top swiper_card-img" alt="">
+                      <div class="card-body">
+                        <h5 class="card-title text-more-two-line lh-sm itinerary-title">玩什麼Play｜工藝文創體驗、學習、觀摩、參訪之旅
+                        </h5>
+                        <p class="itinerary-time"><i class="far fa-calendar-alt me-2"></i>專案期間：2021/05/10 ~ 2021/09/30
+                        </p>
+                        <p class="itinerary-text">工藝文創體驗、學習、觀摩、參訪之旅</p>
+                        <a href="./package.html" class="btn btn-main-color d-block mt-3">點我看更多</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="card">
+                      <img
+                        src="https://www.booking-wise0.com.tw/zhida/zida/images/eatplay/%E7%8E%A9%E4%BB%80%E9%BA%BC%E7%85%A7%E7%89%871.jpg"
+                        class="card-img-top swiper_card-img" alt="">
+                      <div class="card-body">
+                        <h5 class="card-title text-more-two-line lh-sm itinerary-title">玩什麼Pla、觀摩、參訪之旅</h5>
+                        <p class="itinerary-time"><i class="far fa-calendar-alt me-2"></i>專案期間：2021/05/10 ~ 2021/09/30
+                        </p>
+                        <p class="itinerary-text">工藝文創體驗、學習、觀摩、參訪之旅</p>
+                        <a href="./package.html" class="btn btn-main-color d-block mt-3">點我看更多</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="card">
+                      <img
+                        src="https://www.booking-wise0.com.tw/zhida/zida/images/eatplay/%E7%8E%A9%E4%BB%80%E9%BA%BC%E7%85%A7%E7%89%871.jpg"
+                        class="card-img-top swiper_card-img" alt="">
+                      <div class="card-body">
+                        <h5 class="card-title text-more-two-line lh-sm itinerary-title">玩什麼Play｜工藝文創體驗、學習、觀摩、參訪之旅
+                        </h5>
+                        <p class="itinerary-time"><i class="far fa-calendar-alt me-2"></i>專案期間：2021/05/10 ~ 2021/09/30
+                        </p>
+                        <p class="itinerary-text">工藝文創體驗、學習、觀摩、參訪之旅</p>
+                        <a href="./package.html" class="btn btn-main-color d-block mt-3">點我看更多</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="card">
+                      <img
+                        src="https://www.booking-wise0.com.tw/zhida/zida/images/eatplay/%E7%8E%A9%E4%BB%80%E9%BA%BC%E7%85%A7%E7%89%871.jpg"
+                        class="card-img-top swiper_card-img" alt="">
+                      <div class="card-body">
+                        <h5 class="card-title text-more-two-line lh-sm itinerary-title">玩什麼Pla、觀摩、參訪之旅</h5>
+                        <p class="itinerary-time"><i class="far fa-calendar-alt me-2"></i>專案期間：2021/05/10 ~ 2021/09/30
+                        </p>
+                        <p class="itinerary-text">工藝文創體驗、學習、觀摩、參訪之旅</p>
+                        <a href="./package.html" class="btn btn-main-color d-block mt-3">點我看更多</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="card">
+                      <img
+                        src="https://www.booking-wise0.com.tw/zhida/zida/images/eatplay/%E7%8E%A9%E4%BB%80%E9%BA%BC%E7%85%A7%E7%89%871.jpg"
+                        class="card-img-top swiper_card-img" alt="">
+                      <div class="card-body">
+                        <h5 class="card-title text-more-two-line lh-sm itinerary-title">玩什麼Play｜工藝文創體驗、學習、觀摩、參訪之旅
+                        </h5>
+                        <p class="itinerary-time"><i class="far fa-calendar-alt me-2"></i>專案期間：2021/05/10 ~ 2021/09/30
+                        </p>
+                        <p class="itinerary-text">工藝文創體驗、學習、觀摩、參訪之旅</p>
+                        <a href="./package.html" class="btn btn-main-color d-block mt-3">點我看更多</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-button-next three-swiper-button-next custom-swiper-button-next"></div>
+              <div class="swiper-button-prev three-swiper-button-prev custom-swiper-button-prev"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="room-fullImg">
+        <div class="container">
+          <div class="section-content">
+            <div class="section-header d-flex justify-content-between align-items-center text-white">
+              <div class="fs-2 fw-bold">房型預訂</div>
+              <a href="./room.html">查看更多<i class="fas fa-angle-right ms-3"></i></a>
+            </div>
+            <div class="swiper-box">
+              <div class="swiper four-swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="card">
+                      <img src="https://www.booking-wise0.com.tw/zhida/zida/images/Stay_Room/L/stay_detail_img203.jpg"
+                        class="card-img-top swiper_card-img" alt="">
+                      <div class="card-body">
+                        <h5 class="card-title text-more-two-line lh-sm itinerary-title">鑫空間尊親房</h5>
+                        <p class="itinerary-content mb-0">
+                          數千年來的儒家精神帶入集團經營的中心思想中，並藉由此一精神，能發揮對工藝文創事業的「頂真」思維與時時「魯力」感恩做事 ;
+                          同時致力將在地傳統文化藝術與工藝美學融入時尚潮流的休閒遊憩服務中，讓每一位客人都能深刻感受「頂真無價」「心享奢華」，工藝參訪導覽結合工藝體驗實作，打造一個「身、心、靈，絕佳五感」的住宿會館。
+                        </p>
+                        <a href="./room.html" class="btn btn-main-color mt-3">我要預訂</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="card">
+                      <img src="https://www.booking-wise0.com.tw/zhida/zida/images/Stay_Room/L/stay_detail_img309.jpg"
+                        class="card-img-top swiper_card-img" alt="">
+                      <div class="card-body">
+                        <h5 class="card-title text-more-two-line lh-sm itinerary-title">玩什麼Play｜工藝文創體驗、學習、觀摩、參訪之旅
+                        </h5>
+                        <p class="itinerary-content mb-0 mb-0">
+                          數千年來的儒家精神帶入集團經營的中心思想中，並藉由此一精神，能發揮對工藝文創事業的「頂真」思維與時時「魯力」感恩做事 ;
+                          同時致力將在地傳統文化藝術與工藝美學融入時尚潮流的休閒遊憩服務中，讓每一位客人都能深刻感受「頂真無價」「心享奢華」，工藝參訪導覽結合工藝體驗實作，打造一個「身、心、靈，絕佳五感」的住宿會館。
+                        </p>
+                        <a href="./room.html" class="btn btn-main-color mt-3">我要預訂</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="card">
+                      <img src="https://www.booking-wise0.com.tw/zhida/zida/images/Stay_Room/L/stay_detail_img507.jpg"
+                        class="card-img-top swiper_card-img" alt="">
+                      <div class="card-body">
+                        <h5 class="card-title text-more-two-line lh-sm itinerary-title">玩什麼Pla、觀摩、參訪之旅</h5>
+                        <p class="itinerary-content mb-0">
+                          數千年來的儒家精神帶入集團經營的中心思想中，並藉由此一精神，能發揮對工藝文創事業的「頂真」思維與時時「魯力」感恩做事 ;
+                          同時致力將在地傳統文化藝術與工藝美學融入時尚潮流的休閒遊憩服務中，讓每一位客人都能深刻感受「頂真無價」「心享奢華」，工藝參訪導覽結合工藝體驗實作，打造一個「身、心、靈，絕佳五感」的住宿會館。
+                        </p>
+                        <a href="./room.html" class="btn btn-main-color mt-3">我要預訂</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="card">
+                      <img src="https://www.booking-wise0.com.tw/zhida/zida/images/Stay_Room/L/stay_detail_img508.jpg"
+                        class="card-img-top swiper_card-img" alt="">
+                      <div class="card-body">
+                        <h5 class="card-title text-more-two-line lh-sm itinerary-title">玩什麼Play｜工藝文創體驗、學習、觀摩、參訪之旅
+                        </h5>
+                        <p class="itinerary-content mb-0">
+                          數千年來的儒家精神帶入集團經營的中心思想中，並藉由此一精神，能發揮對工藝文創事業的「頂真」思維與時時「魯力」感恩做事 ;
+                          同時致力將在地傳統文化藝術與工藝美學融入時尚潮流的休閒遊憩服務中，讓每一位客人都能深刻感受「頂真無價」「心享奢華」，工藝參訪導覽結合工藝體驗實作，打造一個「身、心、靈，絕佳五感」的住宿會館。
+                        </p>
+                        <a href="./room.html" class="btn btn-main-color mt-3">我要預訂</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="card">
+                      <img
+                        src="https://www.booking-wise0.com.tw/zhida/zida/images/eatplay/%E7%8E%A9%E4%BB%80%E9%BA%BC%E7%85%A7%E7%89%871.jpg"
+                        class="card-img-top swiper_card-img" alt="">
+                      <div class="card-body">
+                        <h5 class="card-title text-more-two-line lh-sm itinerary-title">玩什麼Pla、觀摩、參訪之旅</h5>
+                        <p class="itinerary-content mb-0">
+                          數千年來的儒家精神帶入集團經營的中心思想中，並藉由此一精神，能發揮對工藝文創事業的「頂真」思維與時時「魯力」感恩做事 ;
+                          同時致力將在地傳統文化藝術與工藝美學融入時尚潮流的休閒遊憩服務中，讓每一位客人都能深刻感受「頂真無價」「心享奢華」，工藝參訪導覽結合工藝體驗實作，打造一個「身、心、靈，絕佳五感」的住宿會館。
+                        </p>
+                        <a href="./room.html" class="btn btn-main-color mt-3">我要預訂</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="card">
+                      <img
+                        src="https://www.booking-wise0.com.tw/zhida/zida/images/eatplay/%E7%8E%A9%E4%BB%80%E9%BA%BC%E7%85%A7%E7%89%871.jpg"
+                        class="card-img-top swiper_card-img" alt="">
+                      <div class="card-body">
+                        <h5 class="card-title text-more-two-line lh-sm itinerary-title">玩什麼Play｜工藝文創體驗、學習、觀摩、參訪之旅
+                        </h5>
+                        <p class="itinerary-content mb-0">
+                          數千年來的儒家精神帶入集團經營的中心思想中，並藉由此一精神，能發揮對工藝文創事業的「頂真」思維與時時「魯力」感恩做事 ;
+                          同時致力將在地傳統文化藝術與工藝美學融入時尚潮流的休閒遊憩服務中，讓每一位客人都能深刻感受「頂真無價」「心享奢華」，工藝參訪導覽結合工藝體驗實作，打造一個「身、心、靈，絕佳五感」的住宿會館。
+                        </p>
+                        <a href="./room.html" class="btn btn-main-color mt-3">我要預訂</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-button-next four-swiper-button-next custom-swiper-button-next"></div>
+              <div class="swiper-button-prev four-swiper-button-prev custom-swiper-button-prev"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid bg-gray-f5">
+        <div class="container">
+          <div class="section-content">
+            <div class="section-header d-flex justify-content-between align-items-center">
+              <div class="fs-2 fw-bold">探索更多行程</div>
+              <a href="./package.html">查看更多<i class="fas fa-angle-right ms-3"></i></a>
+            </div>
+            <div class="swiper-box">
+              <div class="swiper five-swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <a href="#">
+                      <img
+                        src="https://pix6.agoda.net/hotelImages/443/443206/443206_15062616400031004119.jpg?s=1024x768"
+                        alt="">
+                      <div class="overlap overlap-bg overlap-hover-blur">
+                        <div class="overlap-btm-title">
+                          澎湖
+                        </div>
+                        <div class="overlap-btm-text">
+                          紫色薰衣草珊瑚海
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href="#">
+                      <img
+                        src="https://www.booking-wise0.com.tw/zhida/zida/images/eatplay/%E8%97%9D%E5%92%96%E5%95%A1.jpg"
+                        alt="">
+                      <div class="overlap overlap-bg overlap-hover-blur">
+                        <div class="overlap-btm-title">
+                          藝珈琲
+                        </div>
+                        <div class="overlap-btm-text">
+                          在靜謐且充滿文藝氣息的氣氛中。享受一杯暖暖的咖啡吧
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href="#">
+                      <img
+                        src="https://www.booking-wise0.com.tw/zhida/zida/images/eatplay/%E7%8E%A9%E4%BB%80%E9%BA%BC%E7%85%A7%E7%89%871.jpg"
+                        alt="">
+                      <div class="overlap overlap-bg overlap-hover-blur">
+                        <div class="overlap-btm-title">
+                          藝珈琲
+                        </div>
+                        <div class="overlap-btm-text">
+                          在靜謐且充滿文藝氣息的氣氛中。享受一杯暖暖的咖啡吧
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href="#">
+                      <img
+                        src="https://pix6.agoda.net/hotelImages/443/443206/443206_15062616400031004132.jpg?s=1024x768"
+                        alt="">
+                      <div class="overlap overlap-bg overlap-hover-blur">
+                        <div class="overlap-btm-title">
+                          玩什麼Play
+                        </div>
+                        <div class="overlap-btm-text">
+                          工藝文創體驗、學習、觀摩、參訪之旅
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href="#">
+                      <img
+                        src="https://images.unsplash.com/photo-1504109586057-7a2ae83d1338?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1780&amp;q=80"
+                        alt="">
+                      <div class="overlap overlap-bg overlap-hover-blur">
+                        <div class="overlap-btm-title">
+                          日本
+                        </div>
+                        <div class="overlap-btm-text">
+                          神社
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href="#">
+                      <img
+                        src="https://images.unsplash.com/photo-1618154782021-6601491cfc0b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=668&amp;q=80"
+                        alt="">
+                      <div class="overlap overlap-bg overlap-hover-blur">
+                        <div class="overlap-btm-title">
+                          日本
+                        </div>
+                        <div class="overlap-btm-text">
+                          神社
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-button-next five-swiper-button-next custom-swiper-button-next"></div>
+              <div class="swiper-button-prev five-swiper-button-prev custom-swiper-button-prev"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 回到頂端 -->
+    <div id="back-to-top" class="back-to-top">
+      <a href="#" class="d-block"><i class="fas fa-chevron-up"></i></a>
+    </div>
+    <!-- footer -->
+    <footer class="container-fluid footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-2 footer-content d-flex justify-content-center align-items-center">
+            <div class="footer-logo">
+              <img src="./images/logo-w.png" alt="">
+            </div>
+          </div>
+          <div class="col-md-5 footer-content">
+            <p class="footer-title">聯絡我們</p>
+            <ul>
+              <li><a href="https://goo.gl/maps/vW9JAQNGSKtnqCPPA" target="_blank"><i
+                    class="footer-icon fas fa-map-marker-alt"></i>地址:
+                  54246南投縣草屯鎮中正路574號1樓</a></li>
+              <li><a href="tel:0910123456"><i class="footer-icon fas fa-phone-alt"></i>電話: 049-230-6969</a></li>
+              <li><a href="mailto:zhida.2306969@gmail.com"><i class="footer-icon far fa-envelope"></i>email:
+                  zhida.2306969@gmail.com</a></li>
+            </ul>
+          </div>
+          <div class="col-md-2 footer-content">
+            <p class="footer-title">探索</p>
+            <ul>
+              <li><a href="./about.html">認識我們</a></li>
+              <li><a href="">人員招募</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3 footer-content">
+            <p class="footer-title">追蹤我們</p>
+            <ul class="d-flex">
+              <li><a href="http://facebook.com"><i class="sns-icon fab fa-facebook"></i></a></li>
+              <li><a href="http://instagram.com"><i class="sns-icon fab fa-instagram"></i></a></li>
+              <li><i class="sns-icon fab fa-twitter"></i></li>
+              <li><i class="sns-icon fab fa-google-plus"></i></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <!-- cdn連bootstrap5的js -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- cdn連swiper輪播的js -->
+  <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+  <!-- cdn連vue的js -->
+  <script src='https://unpkg.com/vue/dist/vue.js'></script>
+  <!-- cdn連vue-calendar的js -->
+  <script src='https://unpkg.com/v-calendar'></script>
+  <!-- cdn連日期的js -->
+  <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+  <!-- 日期的js -->
+  <script src="./js/date.js"></script>
+  <!-- 輪播的js -->
+  <script src="./js/swiper.js"></script>
+  <!-- 主要的js -->
+  <script src="./js/main.js"></script>
+</body>
+
+</html>

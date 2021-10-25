@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>關於我們</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css' />
+  <!-- cdn連輪播的css -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+  <!-- cdn連動畫的css -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <!-- 這是主要的css -->
+  <link rel="stylesheet" href="./css/style.min.css">
+</head>
+
+<body>
+  <div id='app'>
+    <!-- 導覽列區 --------------------------------------------------------------------------------------------------------------------- -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-black-09">
+      <div class="container">
+        <a class="navbar-brand" href="/"><img src="./images/logo-w.png" width="100%" height="50" alt=""></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#wise-navbar"
+          aria-controls="wise-navbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="wise-navbar">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./about.html">認識知達</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                房型預訂
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="./room.html">一般訂房</a></li>
+                <li><a class="dropdown-item" href="./roompackage.html">套裝訂房</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./travel.html">微旅行</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./shop.html">購好物</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">周邊景點</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">達人手札</a>
+            </li>
+          </ul>
+          <!-- 登入/註冊 -->
+          <ul id="login_menu" class="navbar-nav menu-left ml-lg-3">
+            <li class="nav-item">
+              <a id="btn-login" class="nav-link" href="#login" data-bs-toggle="modal" data-bs-target="#user-login"><i
+                  class="fas fa-user fa-fw"></i>登入</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Modal 登入 -->
+    <div class="modal fade" id="user-login" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header text-center">
+            <div class="modal-title w-100 d-flex justify-content-center align-items-center"><img
+                src="./images/logo-b.png" class="me-3" width="90" alt=""><span class="fs-4 fw-bold">登入或註冊</span></div>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body py-7">
+            <form>
+              <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="loginEmail" name="loginEmail" placeholder="請輸入註冊信箱">
+                <label for="loginEmail">請輸入註冊信箱</label>
+              </div>
+              <div class="form-floating">
+                <input type="password" class="form-control" id="loginPassword" name="loginPassword" placeholder="請輸入密碼">
+                <label for="loginPassword">請輸入密碼</label>
+              </div>
+              <a href="#" class="my-3 d-block forget-pw">忘記密碼?</a>
+              <div class="d-grid gap-2">
+                <button class="btn btn-main-color fs-5 mb-1" type="button">登入</button>
+                <button class="btn btn-outline-main-color fs-5" type="button">註冊</button>
+              </div>
+            </form>
+            <!-- <div class="login-pseudo">
+              或
+            </div>
+            <div class="d-grid gap-2">
+              <a href="" class="btn btn-block btn-facebook mb-1">
+                <span class="fs-5"><i class="fab fa-facebook-square me-1"></i>用Facebook 帳號登入</span>
+              </a>
+              <a href="" class="btn btn-block btn-google">
+                <span class="fs-5"><i class="fab fa-google me-1"></i>用Google 帳號登入</span>
+              </a>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main-content">
+      <!-- parallax Banner -->
+      <div class="parallax">
+        <div class="about__parallax">
+          <div class="img-filter">
+            <div class="parallax-content">
+              <div class="parallax-title">關於我們</div>
+              <div class="parallax-text">About us</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- content -->
+      <div class="container-fluid">
+        <div class="container">
+          <div class="section-content">
+            <div class="section-header">
+              <div class="fs-2 fw-bold underline_section-header">關於草屯知達工藝會館</div>
+            </div>
+            <div class="row g-0 about-intro">
+              <div class="col-md-6 order-md-1 pb-lg-3">
+                <div class="about__card-img">
+                  <img src="https://pix6.agoda.net/hotelImages/443/443206/443206_15062616400031004092.jpg?s=1024x768"
+                    alt="" class="img-cover">
+                </div>
+              </div>
+              <div class="col-md-6 order-md-0 pb-lg-3">
+                <div class="about__card-body">
+                  <div class="about__card-text">
+                    <p class="first-letter">
+                      知達工藝會館文化底蘊是一個國家的根本，文創工藝美學更是現今國際競爭力下各國重視的軟實力，知達工藝會館取音自「知」書「達」禮，就是希望將中國數千年來的儒家精神帶入集團經營的中心思想中，並藉由此一精神，能發揮對工藝文創事業的「頂真」思維與時時「魯力」感恩做事
+                      ; 同時致力將在地傳統文化藝術與工藝美學融入時尚潮流的休閒遊憩服務中，讓每一位客人都能深刻感受「頂真無價」「心享奢華」，工藝參訪導覽結合工藝體驗實作，打造一個「身、心、靈，絕佳五感」的住宿會館。
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 order-md-2 order-lg-3">
+                <div class="about__card-img">
+                  <img src="https://pix6.agoda.net/hotelImages/443/443206/443206_15062616400031004046.jpg?s=1024x768"
+                    alt="" class="img-cover">
+                </div>
+              </div>
+              <div class="col-md-6 order-md-3 order-lg-2">
+                <div class="about__card-body">
+                  <div class="about__card-text">
+                    這些年經營管理「苗栗明湖水漾會館」(苗栗縣教師會館暨勞工育樂中心)「鹿港知達文教會館」(勞委會鹿港勞教學苑)的服務經驗，將在地傳統文化藝術與工藝美學融入時尚潮流的休閒遊憩服務中，讓每一位客人都能深刻感受「頂真無價」「心享奢華」，2012年我們更延伸這樣的文化體驗，有機會與草屯國家工藝研究發展中心合作，成立草屯知達會館，將工藝藝術參訪、體驗結合工藝休閒服務，打造一個「身、心、靈，五感體驗」的休憩空間。
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid bg-gray-f5">
+        <div class="container">
+          <div class="section-content">
+            <div class="section-header d-flex justify-content-center align-items-end">
+              <div class="fs-2 fw-bold">園區介紹</div>
+            </div>
+            <div class="row g-0">
+              <div class="col-md-5 col-lg-4">
+                <div class="about__location-box">
+                  <div class="about__location-header">
+                    <p class="text-gold fs-3">地理位置</p>
+                  </div>
+                  <div class="about__location-content">
+                    <div class="text-line-height pb-1">
+                      地址：南投縣草屯鎮中正路574號 (台灣工藝文化園區內)
+                    </div>
+                    <div class="about__location-text text-gray-ccc">
+                      位於台灣工藝研究發展中心內，臨近寶島時代村(草鞋墩夜市)，開車只需5分鐘；還可眺望浪漫夜景喔!!!
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-7 col-lg-8">
+                <div class="embed-responsive embed-responsive-21by9">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7290.806860315426!2d120.691113!3d23.981527!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xde6ea2dc30f00aea!2z6I2J5bGv55-l6YGU5bel6Jed5pyD6aSo!5e0!3m2!1szh-TW!2stw!4v1632814636076!5m2!1szh-TW!2stw"
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid">
+        <div class="container">
+          <div class="section-content">
+            <div class="section-header d-flex justify-content-center align-items-center">
+              <div class="fs-2 fw-bold">詳細介紹</div>
+            </div>
+            <div>
+              <img src="https://www.booking-wise0.com.tw/zhida/zida/images/parkinfo/ntcri_back.jpg" class="img-cover"
+                alt="">
+            </div>
+            <div>
+              <img src="https://www.booking-wise0.com.tw/zhida/zida/images/parkinfo/ntcri_front.jpg" class="img-cover"
+                alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 回到頂端 -->
+    <div id="back-to-top" class="back-to-top">
+      <a href="#" class="d-block"><i class="fas fa-chevron-up"></i></a>
+    </div>
+    <!-- footer -->
+    <footer class="container-fluid footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-2 footer-content d-flex justify-content-center align-items-center">
+            <div class="footer-logo">
+              <img src="./images/logo-w.png" alt="">
+            </div>
+          </div>
+          <div class="col-md-5 footer-content">
+            <p class="footer-title">聯絡我們</p>
+            <ul>
+              <li><a href="https://goo.gl/maps/vW9JAQNGSKtnqCPPA" target="_blank"><i
+                    class="footer-icon fas fa-map-marker-alt"></i>地址:
+                  54246南投縣草屯鎮中正路574號1樓</a></li>
+              <li><a href="tel:0910123456"><i class="footer-icon fas fa-phone-alt"></i>電話: 049-230-6969</a></li>
+              <li><a href="mailto:zhida.2306969@gmail.com"><i class="footer-icon far fa-envelope"></i>email:
+                  zhida.2306969@gmail.com</a></li>
+            </ul>
+          </div>
+          <div class="col-md-2 footer-content">
+            <p class="footer-title">探索</p>
+            <ul>
+              <li><a href="./about.html">認識我們</a></li>
+              <li><a href="">人員招募</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3 footer-content">
+            <p class="footer-title">追蹤我們</p>
+            <ul class="d-flex">
+              <li><a href="http://facebook.com"><i class="sns-icon fab fa-facebook"></i></a></li>
+              <li><a href="http://instagram.com"><i class="sns-icon fab fa-instagram"></i></a></li>
+              <li><i class="sns-icon fab fa-twitter"></i></li>
+              <li><i class="sns-icon fab fa-google-plus"></i></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <!-- cdn連bootstrap5的js -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- 主要的js -->
+  <script src="./js/main.js"></script>
+</body>
+
+</html>

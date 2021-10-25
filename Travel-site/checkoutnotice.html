@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>房型預訂</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css' />
+  <!-- cdn連輪播的css -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+  <!-- cdn連動畫的css -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <!-- 這是主要的css -->
+  <link rel="stylesheet" href="./css/style.min.css">
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#checkoutNotice-navbar" data-bs-offset="0" tabindex="0">
+  <div id='app'>
+    <!-- 導覽列區 --------------------------------------------------------------------------------------------------------------------- -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black-09">
+      <div class="container">
+        <a class="navbar-brand" href="/"><img src="./images/logo-w.png" width="100%" height="50" alt=""></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#wise-navbar"
+          aria-controls="wise-navbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="wise-navbar">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./about.html">認識知達</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                房型預訂
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="./room.html">一般訂房</a></li>
+                <li><a class="dropdown-item" href="./roompackage.html">套裝訂房</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./travel.html">微旅行</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./shop.html">購好物</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">周邊景點</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">達人手札</a>
+            </li>
+          </ul>
+          <!-- 登入/註冊 -->
+          <ul id="login_menu" class="navbar-nav menu-left ml-lg-3">
+            <li class="nav-item">
+              <a id="btn-login" class="nav-link" href="#login" data-bs-toggle="modal" data-bs-target="#user-login"><i
+                  class="fas fa-user fa-fw"></i>登入</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Modal 登入 -->
+    <div class="modal fade" id="user-login" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header text-center">
+            <div class="modal-title w-100 d-flex justify-content-center align-items-center"><img
+                src="./images/logo-b.png" class="me-3" width="90" alt=""><span class="fs-4 fw-bold">登入或註冊</span></div>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body py-7">
+            <form action="">
+              <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="loginEmail" name="loginEmail" placeholder=" 請輸入註冊信箱">
+                <label for="loginEmail">請輸入註冊信箱</label>
+              </div>
+              <div class="form-floating">
+                <input type="password" class="form-control" id="loginPassword" name="loginPassword"
+                  placeholder=" 請輸入密碼">
+                <label for="loginPassword">請輸入密碼</label>
+              </div>
+              <a href="#" class="my-3 d-block forget-pw">忘記密碼?</a>
+              <div class="d-grid gap-2">
+                <button class="btn btn-main-color fs-5 mb-1" type="button">登入</button>
+                <button class="btn btn-outline-main-color fs-5" type="button">註冊</button>
+              </div>
+            </form>
+            <!-- <div class="login-pseudo">
+              或
+            </div>
+            <div class="d-grid gap-2">
+              <a href="" class="btn btn-block btn-facebook mb-1">
+                <span class="fs-5"><i class="fab fa-facebook-square me-1"></i>用Facebook 帳號登入</span>
+              </a>
+              <a href="" class="btn btn-block btn-google">
+                <span class="fs-5"><i class="fab fa-google me-1"></i>用Google 帳號登入</span>
+              </a>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main-content bg-gray-f5">
+      <nav id="checkoutNotice-navbar" class="navbar checkoutNotice-navbar">
+        <div class="container p-0">
+          <ul class="nav navbar-nav d-flex flex-row nav-scroll">
+            <li class="nav-item">
+              <a class="nav-link" href="#notice1">訂房須知</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#notice2">取消訂房注意事項</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#notice3">訂房住宿須知</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#notice4">飯店兒童/加人/加床規定</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#notice5">其他規定</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="checkoutNotice-navbar-box">
+        <div class="container p-lg-0 d-flex">
+          <!-- <div class="d-flex flex-nowrap justify-content-center align-items-center">
+            <a href="./checkout.html" class="px-2">
+              <span><i class="fas fa-chevron-left me-2"></i></span>
+              <span>回上一頁</span>
+            </a>
+          </div> -->
+
+        </div>
+      </div>
+      <div class="container p-0">
+        <div class="row g-0 g-lg-5 section-content">
+          <div class="col-lg-4 order-lg-2 d-none d-lg-block">
+            <div class="order-detail mb-lg-0">
+              <div class="order-detail__title fw-bold">訂房資訊</div>
+              <div class="order-detail_group">
+                <p class="order-detail_group-title">房型選擇</p>
+                <p class="order-detail_group-text">淼森系雙人房</p>
+                <p class="order-detail_group-title">入住時間</p>
+                <p class="order-detail_group-text">2021-06-18 星期五</p>
+                <p class="order-detail_group-title">退房時間</p>
+                <p class="order-detail_group-text">2021-06-19 星期六</p>
+                <p class="order-detail_group-title">間數</p>
+                <p class="order-detail_group-text">2</p>
+              </div>
+              <div class="order-detail_group">
+                <p class="order-detail_group-title">房型選擇</p>
+                <p class="order-detail_group-text">淼森系雙人房</p>
+                <p class="order-detail_group-title">入住時間</p>
+                <p class="order-detail_group-text">2021-06-18 星期五</p>
+                <p class="order-detail_group-title">退房時間</p>
+                <p class="order-detail_group-text">2021-06-19 星期六</p>
+                <p class="order-detail_group-title">間數</p>
+                <p class="order-detail_group-text">2</p>
+              </div>
+              <div>
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="請輸入折扣碼">
+                  <button class="btn btn-main-color" type="button">使用</button>
+                </div>
+              </div>
+              <div>
+                <div class="d-flex justify-content-between align-items-center pt-3">
+                  <p class="order-detail_group-title fw-bold">價格</p>
+                  <p class="fs-5 fw-bold"><span class="px-1">$2720</span>元</p>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                  <p class="order-detail_group-title fw-bold">折扣碼優惠</p>
+                  <p class="fs-5 fw-bold">-<span class="px-1">$200</span>元</p>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                  <p class="order-detail_group-title fw-bold">訂房總計</p>
+                  <p class="text-main-color fs-5 fw-bold">NT<span class="px-1">$2520</span>元</p>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                  <p class="order-detail_group-title fw-bold">應付訂金</p>
+                  <p class="fs-5 fw-bold">NT<span class="px-1">$756</span>元</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-8 order-lg-1 position-relative h-100 bg-white">
+            <div class="checkoutNotice__overview">
+              <div id="notice1">
+                <p class="checkout-card__title fw-bold bg-highlight">訂房須知</p>
+                <div class="notice-box">
+                  <ol>
+                    <li>使用本站訂房系統訂房者，需同意支付所訂房價總金額，以保留線上訂房之房間與價格之權利。</li>
+                    <li>您於網站上完成之信用卡付款，將立即由您所提供之信用卡帳號扣款。</li>
+                    <li>為保障您信用卡交易的安全，本網站規範線上訂房人應與辦理住宿（check in）者資料相符，並須於辦理住宿的同時提供相同身份證明文件。</li>
+                    <li>透過線上訂房確認後，若您需要更改住房時間，請直接與客服人員聯繫。</li>
+                    <li>透過線上訂房確認後，若您需要取消訂房，請來電向線上訂房系統客服人員完成取消訂房作業。</li>
+                    <li>本飯店辦理入住CHECK
+                      IN時間為15:00至22:00點，敬請依飯店之規於時間內定辦理入住；若您無法在規定時間內辦理入住手續，請務必於入住前一天先與飯店電話確認保留，否則飯店將視為NOSHOW，恕不退費，飯店可將房間開放予其他候補旅客。離店時間CHECK
+                      OUT：11:00以前。</li>
+                    <li>登記住宿日若遇飯店所在地發生不可抗拒因素，如因地震導致交通中斷、或中央氣象局發佈陸上颱風警報，請於入住日起三日內含當日，與系統中心聯絡。</li>
+                    <li>下訂入住前請先詳閱本須知,下訂入住後視同貴賓了解並同意遵守以下規定:</li>
+                  </ol>
+                </div>
+              </div>
+              <div id="notice2">
+                <p class="checkout-card__title fw-bold bg-highlight">取消訂房注意事項：</p>
+                <div class="notice-box">
+                  <div>一、一般訂房規定如下依照觀光局發布個別旅客訂房定型化契約規定收取定金者，依下列方式處理：</div>
+                  <ol>
+                    <li>旅客解約通知於預定住宿日前第十四日以前到達者，退還定金百分之百。</li>
+                    <li>旅客解約通知於預定住宿日前第十日至第十三日到達者，退還定金百分之七十。</li>
+                    <li>旅客解約通知於預定住宿日前第七日至第九日到達者，退還定金百分之五十。</li>
+                    <li>旅客解約通知於預定住宿日前第四日至第六日到達者，退還定金百分之四十。</li>
+                    <li>旅客解約通知於預定住宿日前第二日至第三日到達者，退還定金百分之三十。</li>
+                    <li>旅客解約通知於預定住宿日前第一日到達者，退還定金百分之二十。</li>
+                    <li>旅客解約通知於預定住宿日當日到達或未為解約通知者，不退還定金。</li>
+                  </ol>
+                  <div>二、特惠套裝訂房規定如下:</div>
+                  <ol>
+                    <li>因特惠套裝為超優惠房型,付訂後不可退訂,若取消飯店得沒收全額訂金。</li>
+                  </ol>
+                  <div>三、新春過年期間:</div>
+                  <ol>
+                    <li>110/02/10-109/02/16期間之住房,付訂後不可退訂,若取消飯店得沒收全額訂金。</li>
+                  </ol>
+                </div>
+              </div>
+              <div id="notice3">
+                <p class="checkout-card__title fw-bold bg-highlight">訂房住宿須知</p>
+                <div class="notice-box">下訂入住前請先詳閱本須知,下訂入住後視同貴賓了解並同意遵守以下規定:
+                  <ol>
+                    <li>入住時間check in:3pm-10pm</li>
+                    <li>退房時間check out:11am</li>
+                    <li>系統控管時間 10:30pm-6:00am夜晚專人服務專線:049-2306969</li>
+                    <li>早餐時段7am-9:30am</li>
+                    <li>全館全面禁菸</li>
+                    <li>請勿攜帶寵物入住導盲犬除外</li>
+                    <li>會館前貴賓專屬免費停車場</li>
+                  </ol>
+                </div>
+              </div>
+              <div id="notice4">
+                <p class="checkout-card__title fw-bold bg-highlight">【飯店兒童/加人/加床規定】</p>
+                <div class="notice-box">
+                  <ol>
+                    <li>0-2歲含以下不佔床不收費-可提前預約嬰兒床數量有限</li>
+                    <li>4歲含以下不佔床不收費</li>
+                    <li>5歲含以上需額外加收加床費用700元/晚/人費用包含早餐與備品</li>
+                    <li>部分房型無法加床或加超過2人,請於下定時詢問確認後預定,感謝您!</li>
+                  </ol>
+                </div>
+              </div>
+              <div id="notice5">
+                <p class="checkout-card__title fw-bold bg-highlight">【系統控管】</p>
+                <div class="notice-box">晚上10點30至隔日早上6點,為飯店系統控管時間,此段時間無提供房間與櫃台服務Room
+                  Service,但旅客皆可攜帶房卡自由進出會館,出入時請於大門口右側白色按鈕按壓;進入時則用房卡感應或輸入密碼即可進入!此段期間需要服務有專人服務專線 049-2306969
+                </div>
+                <p class="checkout-card__title fw-bold bg-highlight">【全館禁菸】</p>
+                <div class="notice-box">本館全面禁煙，若需抽煙請至館外空曠處，因館內房內皆設有煙霧偵測器，已免觸動警鈴！</div>
+                <p class="checkout-card__title fw-bold bg-highlight">【禁帶寵物】</p>
+                <div class="notice-box">為維護其他房客的權益，請勿攜帶寵物入住，謝謝！導盲犬除外</div>
+                <div class="notice-box">24小時電話訂房專線: 049-2306969</div>
+              </div>
+              <div class="alert alert-warning lh-base" role="alert">
+                <div><i class="fas fa-exclamation-triangle me-2"></i>疫情期間本館之住宿將暫停承接</div>
+                <div>
+                  過去28天曾有出入境史、外籍旅客、
+                  去過高風險場所、有接觸史、需要及正在居家隔離、
+                  居家檢疫、自主健康管理之貴賓入住 !
+                  造成您的不辨，敬請見諒 !!
+                  會館早餐防疫期間，更改為ROOM SERVICE
+                  入住時先預約送餐時間7:00-9:00
+                  會館公共空間也暫停開放
+                  感謝您與我們共同防疫守護彼此健康!!
+                </div>
+                <div> We apologize for not able to provide accommodations
+                  or dining sevrvice for
+                  Guest with travel history aboard in the past 28 days.
+                  Foreign passport holders.
+                  Under quarantine , self-health monitoringin contact
+                  with confirmed cases.
+                </div>
+              </div>
+              <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                <label class="form-check-label" for="flexCheckChecked">
+                  我同意以上條款(請勾選方可結帳)
+                </label>
+              </div>
+              <div class="row justify-content-center">
+                <div class="col-6">
+                  <a href="./room.html" class="btn btn-danger py-2 d-block">繼續訂購</a>
+                </div>
+                <div class="col-6">
+                  <a href="./confirm.html" class="btn btn-danger py-2 d-block">結帳</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 回到頂端 -->
+    <div id="back-to-top" class="back-to-top">
+      <a href="#" class="d-block"><i class="fas fa-chevron-up"></i></a>
+    </div>
+    <!-- footer -->
+    <footer class="container-fluid footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-2 footer-content d-flex justify-content-center align-items-center">
+            <div class="footer-logo">
+              <img src="./images/logo-w.png" alt="">
+            </div>
+          </div>
+          <div class="col-md-5 footer-content">
+            <p class="footer-title">聯絡我們</p>
+            <ul>
+              <li><a href="https://goo.gl/maps/vW9JAQNGSKtnqCPPA" target="_blank"><i
+                    class="footer-icon fas fa-map-marker-alt"></i>地址:
+                  54246南投縣草屯鎮中正路574號1樓</a></li>
+              <li><a href="tel:0910123456"><i class="footer-icon fas fa-phone-alt"></i>電話: 049-230-6969</a></li>
+              <li><a href="mailto:zhida.2306969@gmail.com"><i class="footer-icon far fa-envelope"></i>email:
+                  zhida.2306969@gmail.com</a></li>
+            </ul>
+          </div>
+          <div class="col-md-2 footer-content">
+            <p class="footer-title">探索</p>
+            <ul>
+              <li><a href="./about.html">認識我們</a></li>
+              <li><a href="">人員招募</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3 footer-content">
+            <p class="footer-title">追蹤我們</p>
+            <ul class="d-flex">
+              <li><a href="http://facebook.com"><i class="sns-icon fab fa-facebook"></i></a></li>
+              <li><a href="http://instagram.com"><i class="sns-icon fab fa-instagram"></i></a></li>
+              <li><i class="sns-icon fab fa-twitter"></i></li>
+              <li><i class="sns-icon fab fa-google-plus"></i></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <!-- cdn連bootstrap5的js -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- cdn連swiper輪播的js -->
+  <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+  <!-- cdn連vue的js -->
+  <script src='https://unpkg.com/vue/dist/vue.js'></script>
+  <!-- cdn連vue-calendar的js -->
+  <script src='https://unpkg.com/v-calendar'></script>
+  <!-- cdn連日期的js -->
+  <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+  <!-- cdn連動畫的js -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- 日期的js -->
+  <script src="./js/date.js"></script>
+  <!-- 輪播的js -->
+  <script src="./js/swiper.js"></script>
+  <!-- 結帳注意事項頁的js -->
+  <script src="./js/checkoutnotice.js"></script>
+  <!-- 主要的js -->
+  <script src="./js/main.js"></script>
+</body>
+
+</html>

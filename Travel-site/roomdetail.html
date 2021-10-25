@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>房型預訂</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css' />
+  <!-- cdn連輪播的css -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+  <!-- cdn連動畫的css -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <!-- 這是主要的css -->
+  <link rel="stylesheet" href="./css/style.min.css">
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#roombooking-navbar" data-bs-offset="0" tabindex="0">
+  <div id='app'>
+    <!-- 導覽列區 --------------------------------------------------------------------------------------------------------------------- -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black-09">
+      <div class="container">
+        <a class="navbar-brand" href="/"><img src="./images/logo-w.png" width="100%" height="50" alt=""></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#wise-navbar"
+          aria-controls="wise-navbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="wise-navbar">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./about.html">認識知達</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                房型預訂
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="./room.html">一般訂房</a></li>
+                <li><a class="dropdown-item" href="./roompackage.html">套裝訂房</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./travel.html">微旅行</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./shop.html">購好物</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">周邊景點</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">達人手札</a>
+            </li>
+          </ul>
+          <!-- 登入/註冊 -->
+          <ul id="login_menu" class="navbar-nav menu-left ml-lg-3">
+            <li class="nav-item">
+              <a id="btn-login" class="nav-link" href="#login" data-bs-toggle="modal" data-bs-target="#user-login"><i
+                  class="fas fa-user fa-fw"></i>登入</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Modal 登入 -->
+    <div class="modal fade" id="user-login" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header text-center">
+            <div class="modal-title w-100 d-flex justify-content-center align-items-center"><img
+                src="./images/logo-b.png" class="me-3" width="90" alt=""><span class="fs-4 fw-bold">登入或註冊</span></div>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body py-7">
+            <form action="">
+              <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="loginEmail" name="loginEmail" placeholder=" 請輸入註冊信箱">
+                <label for="loginEmail">請輸入註冊信箱</label>
+              </div>
+              <div class="form-floating">
+                <input type="password" class="form-control" id="loginPassword" name="loginPassword"
+                  placeholder=" 請輸入密碼">
+                <label for="loginPassword">請輸入密碼</label>
+              </div>
+              <a href="#" class="my-3 d-block forget-pw">忘記密碼?</a>
+              <div class="d-grid gap-2">
+                <button class="btn btn-main-color fs-5 mb-1" type="button">登入</button>
+                <button class="btn btn-outline-main-color fs-5" type="button">註冊</button>
+              </div>
+            </form>
+            <!-- <div class="login-pseudo">
+              或
+            </div>
+            <div class="d-grid gap-2">
+              <a href="" class="btn btn-block btn-facebook mb-1">
+                <span class="fs-5"><i class="fab fa-facebook-square me-1"></i>用Facebook 帳號登入</span>
+              </a>
+              <a href="" class="btn btn-block btn-google">
+                <span class="fs-5"><i class="fab fa-google me-1"></i>用Google 帳號登入</span>
+              </a>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 小尺寸的預訂 bar -->
+    <nav class="navbar navbar-light fixed-bottom d-lg-none btm-navbar">
+      <div class="container">
+        <ul class="navbar-nav w-100 flex-row justify-content-between align-items-center">
+          <li class="nav-item flex-fill d-flex justify-content-between align-items-center">
+            <div class="d-flex fs-5" v-if="this.range.end !== ''">
+              <div class="me-3"><span class="me-2">入住日期</span><span class="bg-highlight">{{ getStartDate() }}</span>
+              </div>
+              <div><span class="me-2">退房日期</span><span class="bg-highlight">{{ getEndDate() }}</span></div>
+            </div>
+            <div class="me-3 fs-5">
+              <span class="text-main-color fw-bold">$10,000</span>
+              <span>/晚</span>
+            </div>
+          </li>
+          <li class="nav-item">
+            <button type="button" class="btn btn-main-color d-none">
+              立即預訂
+            </button>
+            <button type="button" class="btn btn-main-color" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              立即預訂
+            </button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- 小尺寸的預訂 Modal -->
+    <div class="modal fade d-lg-none" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">請選擇訂購內容</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <p class="bg-highlight">請選擇入住-退房日期</p>
+              <v-date-picker v-model="range" color="orange" is-range>
+                <template v-slot="{ inputValue, inputEvents }">
+                  <div class="row">
+                    <div class="col-6">
+                      <label for="inputCheckin" class="form-label">入住日期</label>
+                      <input :value="inputValue.start" v-on="inputEvents.start" class="form-control"
+                        placeholder="yyyy/mm/dd" />
+                    </div>
+                    <div class="col-6">
+                      <label for="inputCheckout" class="form-label">退房日期</label>
+                      <input :value="inputValue.end" v-on="inputEvents.end" class="form-control"
+                        placeholder="yyyy/mm/dd" />
+                    </div>
+                  </div>
+                </template>
+              </v-date-picker>
+            </div>
+            <div class="mb-3">
+              <p class="bg-highlight">間數</p>
+              <select class="form-select">
+                <option selected value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <a href="./checkout.html" class="btn btn-main-color">確認訂購</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main-content roombooking-page">
+      <!-- 房間照片 -->
+      <div class="container-fluid">
+        <div class="container roombooking__room-photo-box section-content">
+          <div class="swiper threeCuts-swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img
+                  src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/08/64/c0/c4/caption.jpg?w=2400&h=-1&s=1"
+                  class="img-cover" alt="">
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/08/64/c0/c4/caption.jpg?w=2400&h=-1&s=1"
+                  class="img-cover" alt="">
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/08/64/c0/c4/caption.jpg?w=2400&h=-1&s=1"
+                  class="img-cover" alt="">
+              </div>
+            </div>
+            <div class="swiper-button-next threeCuts-swiper-button-next"></div>
+            <div class="swiper-button-prev threeCuts-swiper-button-prev"></div>
+          </div>
+        </div>
+      </div>
+      <nav id="roombooking-navbar" class="navbar roombooking-navbar">
+        <div class="container p-0">
+          <ul class="nav navbar-nav d-flex flex-row">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#">照片</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#room-facility">客房設備</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#room-otherService">其他服務</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#room-notice">訂房住宿須知</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="container room-overview">
+        <div class="row g-0">
+          <div class="col-lg-4 ps-lg-3 ps-lg-5 order-lg-2 d-none d-lg-block">
+            <div class="booking-sticky-card">
+              <div class="booking-sticky-card__price fw-bold fs-3 mb-2 bg-highlight">
+                <span>$10,000</span>
+                <span>/晚</span>
+              </div>
+              <div class="booking-sticky-card__input-box">
+                <v-date-picker v-model="range" color="orange" is-range>
+                  <template v-slot="{ inputValue, inputEvents }">
+                    <div class="row g-0">
+                      <div class="col-6">
+                        <label for="inputCheckin" class="form-label">入住日期</label>
+                        <input :value="inputValue.start" v-on="inputEvents.start" class="form-control border-0 px-0"
+                          placeholder="yyyy/mm/dd" />
+                      </div>
+                      <div class="col-6">
+                        <label for="inputCheckout" class="form-label">退房日期</label>
+                        <input :value="inputValue.end" v-on="inputEvents.end" class="form-control border-0 px-0"
+                          placeholder="yyyy/mm/dd" />
+                      </div>
+                    </div>
+                  </template>
+                </v-date-picker>
+              </div>
+              <div class="booking-sticky-card__input-box">
+                <span>間數</span>
+                <select class="form-select border-0 px-0">
+                  <option selected value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </div>
+              <a href="./checkout.html" class="btn btn-main-color d-block">確認訂購</a>
+            </div>
+          </div>
+          <div class="col-lg-8 order-lg-1 position-relative h-100">
+            <div class="room-overview_box">
+              <p class="fs-2">標準客房</p>
+              <div> 文化底蘊是一個國家的根本，文創工藝美學更是現今國際競爭力下各國重視的軟實力，
+                知達開發，取音自「知」書「達」禮，就是希望將中國數千年來的儒家精神帶入集團經營的中心思想中，
+                並藉由此一精神，能發揮對工藝文創事業的「頂真」思維與時時「魯力」感恩做事， 將美好的事物發揮到極致，傳承千秋廣佈全球國際。草屯知達會館，將工藝藝術參訪、體驗結合工藝休閒服務，
+                打造一個「身、心、靈，五感體驗」的休憩空間。</div>
+            </div>
+            <div id="room-facility" class="room-overview_box">
+              <p class="room-overview_box-title">客房設備</p>
+              <ul>
+                <li>冰箱</li>
+                <li>獨立空調設備</li>
+                <li>免費瓶裝水</li>
+                <li>免費有線上網/ Wi-Fi</li>
+                <li>吹風機</li>
+                <li>平面電視</li>
+                <li>盥洗用品</li>
+                <li>書桌</li>
+              </ul>
+            </div>
+            <div id="room-otherService" class="room-overview_box">
+              <p class="room-overview_box-title">其他服務</p>
+              <ul>
+                <li>公共區域WiFi / 所有房型皆附免費WiFi</li>
+                <li>禮自慢紀念禮品店</li>
+                <li>餐廳(供應早餐)</li>
+                <li>藝珈琲咖啡廳(咖啡廳周一休館)</li>
+                <li>24小時監視保全系統</li>
+                <li>Morning call服務</li>
+                <li>工藝參訪行程(台灣工藝文化園區巡禮)</li>
+              </ul>
+            </div>
+            <div id="room-notice" class="room-overview_box">
+              <p class="room-overview_box-title">訂房住宿須知</p>
+              <ul>
+                <li>入住時間(check in):3pm-10pm</li>
+                <li>若您需要較晚抵達請,事先來電會館告知049-2306969</li>
+                <li>退房時間(check out):11am</li>
+                <li>系統控管時間10:30pm-6:00am</li>
+                <li>(需要服務請致電專人049-2306969)</li>
+                <li>早餐時段7am-9:00am</li>
+                <li>全館全面禁菸</li>
+                <li>請勿攜帶寵物入住(導盲犬除外)</li>
+                <li>會館前免費停車場</li>
+              </ul>
+            </div>
+            <div id="room-notice" class="room-overview_box">
+              <p class="room-overview_box-title">飯店兒童/加人/加床規定</p>
+              <ul>
+                <li>0-2歲(含)以下不佔床不收費-可提前預約嬰兒床(數量有限)</li>
+                <li>4歲(含)以下不佔床不收費</li>
+                <li>5歲(含)以上需額外加收加床費用700元/晚/人(費用包含早餐與備品)</li>
+                <li>部分房型無法加床或加超過2人,請於下訂前詢問確認,感謝您!</li>
+                <li>全館全面禁菸</li>
+                <li>請勿攜帶寵物入住(導盲犬除外)</li>
+                <li>會館前免費停車場</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid bg-gray-f5">
+        <div class="container">
+          <div class="section-content">
+            <div class="section-header d-flex justify-content-between align-items-center">
+              <div class="fs-2 fw-bold">探索更多行程</div>
+              <a href="./travel.html">查看更多<i class="fas fa-angle-right ms-3"></i></a>
+            </div>
+            <div class="swiper-box">
+              <div class="swiper five-swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <a href="#">
+                      <img
+                        src="https://pix6.agoda.net/hotelImages/443/443206/443206_15062616400031004119.jpg?s=1024x768"
+                        alt="">
+                      <div class="overlap overlap-bg overlap-hover-blur">
+                        <div class="overlap-btm-title">
+                          澎湖
+                        </div>
+                        <div class="overlap-btm-text">
+                          紫色薰衣草珊瑚海
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href="#">
+                      <img
+                        src="https://www.booking-wise0.com.tw/zhida/zida/images/eatplay/%E8%97%9D%E5%92%96%E5%95%A1.jpg"
+                        alt="">
+                      <div class="overlap overlap-bg overlap-hover-blur">
+                        <div class="overlap-btm-title">
+                          藝珈琲
+                        </div>
+                        <div class="overlap-btm-text">
+                          在靜謐且充滿文藝氣息的氣氛中。享受一杯暖暖的咖啡吧
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href="#">
+                      <img
+                        src="https://www.booking-wise0.com.tw/zhida/zida/images/eatplay/%E7%8E%A9%E4%BB%80%E9%BA%BC%E7%85%A7%E7%89%871.jpg"
+                        alt="">
+                      <div class="overlap overlap-bg overlap-hover-blur">
+                        <div class="overlap-btm-title">
+                          藝珈琲
+                        </div>
+                        <div class="overlap-btm-text">
+                          在靜謐且充滿文藝氣息的氣氛中。享受一杯暖暖的咖啡吧
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href="#">
+                      <img
+                        src="https://pix6.agoda.net/hotelImages/443/443206/443206_15062616400031004132.jpg?s=1024x768"
+                        alt="">
+                      <div class="overlap overlap-bg overlap-hover-blur">
+                        <div class="overlap-btm-title">
+                          玩什麼Play
+                        </div>
+                        <div class="overlap-btm-text">
+                          工藝文創體驗、學習、觀摩、參訪之旅
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href="#">
+                      <img
+                        src="https://images.unsplash.com/photo-1504109586057-7a2ae83d1338?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1780&amp;q=80"
+                        alt="">
+                      <div class="overlap overlap-bg overlap-hover-blur">
+                        <div class="overlap-btm-title">
+                          日本
+                        </div>
+                        <div class="overlap-btm-text">
+                          神社
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href="#">
+                      <img
+                        src="https://images.unsplash.com/photo-1618154782021-6601491cfc0b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=668&amp;q=80"
+                        alt="">
+                      <div class="overlap overlap-bg overlap-hover-blur">
+                        <div class="overlap-btm-title">
+                          日本
+                        </div>
+                        <div class="overlap-btm-text">
+                          神社
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-button-next five-swiper-button-next custom-swiper-button-next"></div>
+              <div class="swiper-button-prev five-swiper-button-prev custom-swiper-button-prev"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- footer -->
+    <footer class="container-fluid footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-2 footer-content d-flex justify-content-center align-items-center">
+            <div class="footer-logo">
+              <img src="./images/logo-w.png" alt="">
+            </div>
+          </div>
+          <div class="col-md-5 footer-content">
+            <p class="footer-title">聯絡我們</p>
+            <ul>
+              <li><a href="https://goo.gl/maps/vW9JAQNGSKtnqCPPA" target="_blank"><i
+                    class="footer-icon fas fa-map-marker-alt"></i>地址:
+                  54246南投縣草屯鎮中正路574號1樓</a></li>
+              <li><a href="tel:0910123456"><i class="footer-icon fas fa-phone-alt"></i>電話: 049-230-6969</a></li>
+              <li><a href="mailto:zhida.2306969@gmail.com"><i class="footer-icon far fa-envelope"></i>email:
+                  zhida.2306969@gmail.com</a></li>
+            </ul>
+          </div>
+          <div class="col-md-2 footer-content">
+            <p class="footer-title">探索</p>
+            <ul>
+              <li><a href="./about.html">認識我們</a></li>
+              <li><a href="">人員招募</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3 footer-content">
+            <p class="footer-title">追蹤我們</p>
+            <ul class="d-flex">
+              <li><a href="http://facebook.com"><i class="sns-icon fab fa-facebook"></i></a></li>
+              <li><a href="http://instagram.com"><i class="sns-icon fab fa-instagram"></i></a></li>
+              <li><i class="sns-icon fab fa-twitter"></i></li>
+              <li><i class="sns-icon fab fa-google-plus"></i></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <!-- cdn連bootstrap5的js -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- cdn連swiper輪播的js -->
+  <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+  <!-- cdn連vue的js -->
+  <script src='https://unpkg.com/vue/dist/vue.js'></script>
+  <!-- cdn連vue-calendar的js -->
+  <script src='https://unpkg.com/v-calendar'></script>
+  <!-- cdn連日期的js -->
+  <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+  <!-- cdn連動畫的js -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- 日期的js -->
+  <script src="./js/date.js"></script>
+  <!-- 輪播的js -->
+  <script src="./js/swiper.js"></script>
+  <!-- 房間預訂的js -->
+  <script src="./js/roomdetail.js"></script>
+  <!-- 主要的js -->
+  <script src="./js/main.js"></script>
+</body>
+
+</html>

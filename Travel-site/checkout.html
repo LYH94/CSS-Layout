@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>房型預訂</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css' />
+  <!-- cdn連輪播的css -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+  <!-- cdn連動畫的css -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <!-- 這是主要的css -->
+  <link rel="stylesheet" href="./css/style.min.css">
+</head>
+
+<body>
+  <div id='app'>
+    <!-- header -->
+    <a href="./roomdetail.html">
+      <div class="nav-header">
+        <div class="nav-header_icon d-flex justify-content-center align-items-center"><i
+            class="fas fa-chevron-left"></i></div>
+        <div class="d-flex justify-content-center align-items-center">訂購資訊</div>
+      </div>
+    </a>
+    <!-- 主要內容 -->
+    <div class="main-content bg-gray-f5">
+      <div class="container-fluid container-lg p-0 checkout-wrap">
+        <div class="row g-0 g-lg-4 section-content">
+          <div class="col-md-12 col-lg-4 order-lg-1">
+            <div class="order-detail">
+              <div class="order-detail__title fw-bold">訂房資訊</div>
+              <div class="order-detail_group">
+                <p class="order-detail_group-title">房型選擇</p>
+                <p class="order-detail_group-text">淼森系雙人房</p>
+                <p class="order-detail_group-title">入住時間</p>
+                <p class="order-detail_group-text">2021-06-18 星期五</p>
+                <p class="order-detail_group-title">退房時間</p>
+                <p class="order-detail_group-text">2021-06-19 星期六</p>
+                <p class="order-detail_group-title">間數</p>
+                <p class="order-detail_group-text">2</p>
+              </div>
+              <div class="order-detail_group">
+                <p class="order-detail_group-title">房型選擇</p>
+                <p class="order-detail_group-text">淼森系雙人房</p>
+                <p class="order-detail_group-title">入住時間</p>
+                <p class="order-detail_group-text">2021-06-18 星期五</p>
+                <p class="order-detail_group-title">退房時間</p>
+                <p class="order-detail_group-text">2021-06-19 星期六</p>
+                <p class="order-detail_group-title">間數</p>
+                <p class="order-detail_group-text">2</p>
+              </div>
+              <div>
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="請輸入折扣碼">
+                  <button class="btn btn-main-color" type="button">使用</button>
+                </div>
+              </div>
+              <div>
+                <div class="d-flex justify-content-between align-items-center pt-3">
+                  <p class="order-detail_group-title fw-bold">價格</p>
+                  <p class="fs-5 fw-bold"><span class="px-1">$2720</span>元</p>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                  <p class="order-detail_group-title fw-bold">折扣碼優惠</p>
+                  <p class="fs-5 fw-bold">-<span class="px-1">$200</span>元</p>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                  <p class="order-detail_group-title fw-bold">訂房總計</p>
+                  <p class="text-main-color fs-5 fw-bold">NT<span class="px-1">$2520</span>元</p>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                  <p class="order-detail_group-title fw-bold">應付訂金</p>
+                  <p class="fs-5 fw-bold">NT<span class="px-1">$756</span>元</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 col-lg-8 order-lg-0">
+            <div class="checkout-card">
+              <div class="checkout-card__title fw-bold">訂購人資料</div>
+              <form class="row">
+                <div class="col-md-5 mb-2">
+                  <label for="checkoutLastName" class="form-label">姓</label>
+                  <input type="text" class="form-control" id="checkoutLastName" placeholder="姓">
+                </div>
+                <div class="col-md-5 mb-2">
+                  <label for="checkoutFirstName" class="form-label">名</label>
+                  <input type="text" class="form-control" id="checkoutFirstName" placeholder="名">
+                </div>
+                <div class="col-md-2 mb-2">
+                  <label for="checkoutTitle" class="form-label">稱謂</label>
+                  <select id="checkoutTitle" class="form-select">
+                    <option selected>先生</option>
+                    <option>女士</option>
+                  </select>
+                </div>
+                <div class="col-md-6 mb-2">
+                  <label for="checkoutCountry" class="form-label">國籍</label>
+                  <input type="text" class="form-control" id="checkoutCountry">
+                </div>
+                <div class="col-md-6 mb-2">
+                  <label for="checkoutBirthday" class="form-label">生日</label>
+                  <v-date-picker v-model="date" color="orange">
+                    <template #default="{ inputValue, inputEvents }">
+                      <div class="position-relative">
+                        <i class="far fa-calendar-alt position-absolute calender-icon"></i>
+                        <input id="checkoutBirthday" class="input-calender w-100" :value="inputValue" v-on="inputEvents"
+                          placeholder="yyyy/mm/dd" />
+                      </div>
+                    </template>
+                  </v-date-picker>
+                </div>
+                <div class="col-md-6 mb-2">
+                  <label for="checkoutPhone" class="form-label">手機號碼</label>
+                  <input type="text" class="form-control" id="checkoutPhone">
+                </div>
+                <div class="col-md-6 mb-2">
+                  <label for="checkoutTel" class="form-label">電話號碼</label>
+                  <input type="text" class="form-control" id="checkoutTel">
+                </div>
+                <div class="col-12 mb-2">
+                  <label for="checkoutEmail" class="form-label">Email address</label>
+                  <input type="email" class="form-control" id="checkoutEmail" placeholder="請輸入電子信箱">
+                  <div id="emailHelp" class="form-text text-muted mt-2">
+                    *建議以Gmail為主，Yahoo、Hotmail…等常有擋信機制，以利訂房確認書順利寄發，謝謝。</div>
+                </div>
+                <div class="col-md-6 mb-2">
+                  <label for="checkoutTel" class="form-label">統一編號</label>
+                  <input type="text" class="form-control" id="checkoutTel">
+                  <div class="form-text text-muted mt-2">
+                    因應財政部新版電子發票格式，即日起公司戶電子發票證明聯一律無需提供「抬頭」。電子發票上將不顯示抬頭欄位，紙本電子發票印有統編即可作為會計憑證。</div>
+                </div>
+                <div class="mb-2">
+                  <label for="checkoutTextarea" class="form-label">備註</label>
+                  <textarea class="form-control" id="checkoutTextarea" rows="1"></textarea>
+                </div>
+              </form>
+            </div>
+            <div class="checkout-card">
+              <div class="checkout-card__title fw-bold">住宿人資料</div>
+              <form class="row">
+                <div class="col-12 my-2">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                  <label class="form-check-label" for="flexCheckChecked">
+                    訂購人與住房人相同
+                  </label>
+                </div>
+                <div class="col-md-5 mb-2">
+                  <label for="checkoutLastName" class="form-label">姓</label>
+                  <input type="text" class="form-control" id="checkoutLastName" placeholder="姓">
+                </div>
+                <div class="col-md-5 mb-2">
+                  <label for="checkoutFirstName" class="form-label">名</label>
+                  <input type="text" class="form-control" id="checkoutFirstName" placeholder="名">
+                </div>
+                <div class="col-md-2 mb-2">
+                  <label for="checkoutTitle" class="form-label">稱謂</label>
+                  <select id="checkoutTitle" class="form-select">
+                    <option selected>先生</option>
+                    <option>女士</option>
+                  </select>
+                </div>
+                <div class="col-md-6 mb-2">
+                  <label for="checkoutCountry" class="form-label">國籍</label>
+                  <input type="text" class="form-control" id="checkoutCountry">
+                </div>
+                <div class="col-md-6 mb-2">
+                  <label for="checkoutBirthday" class="form-label">生日</label>
+                  <v-date-picker v-model="date" color="orange">
+                    <template #default="{ inputValue, inputEvents }">
+                      <div class="position-relative">
+                        <i class="far fa-calendar-alt position-absolute calender-icon"></i>
+                        <input id="checkoutBirthday" class="input-calender w-100" :value="inputValue" v-on="inputEvents"
+                          placeholder="yyyy/mm/dd" />
+                      </div>
+                    </template>
+                  </v-date-picker>
+                </div>
+                <div class="col-md-6 mb-2">
+                  <label for="checkoutPhone" class="form-label">手機號碼</label>
+                  <input type="text" class="form-control" id="checkoutPhone">
+                </div>
+                <div class="col-md-6 mb-2">
+                  <label for="checkoutTel" class="form-label">電話號碼</label>
+                  <input type="text" class="form-control" id="checkoutTel">
+                </div>
+                <div class="col-12 mb-2">
+                  <label for="checkoutEmail" class="form-label">Email address</label>
+                  <input type="email" class="form-control" id="checkoutEmail" placeholder="請輸入電子信箱">
+                  <div id="emailHelp" class="form-text text-muted my-2">
+                    *建議以Gmail為主，Yahoo、Hotmail…等常有擋信機制，以利訂房確認書順利寄發，謝謝。</div>
+                </div>
+              </form>
+              <a href="./checkoutnotice.html" class="btn btn-danger w-100 my-3" type="button">確認送出下一步</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- footer -->
+    <footer class="container-fluid footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-2 footer-content d-flex justify-content-center align-items-center">
+            <div class="footer-logo">
+              <img src="./images/logo-w.png" alt="">
+            </div>
+          </div>
+          <div class="col-md-5 footer-content">
+            <p class="footer-title">聯絡我們</p>
+            <ul>
+              <li><a href="https://goo.gl/maps/vW9JAQNGSKtnqCPPA" target="_blank"><i
+                    class="footer-icon fas fa-map-marker-alt"></i>地址:
+                  54246南投縣草屯鎮中正路574號1樓</a></li>
+              <li><a href="tel:0910123456"><i class="footer-icon fas fa-phone-alt"></i>電話: 049-230-6969</a></li>
+              <li><a href="mailto:zhida.2306969@gmail.com"><i class="footer-icon far fa-envelope"></i>email:
+                  zhida.2306969@gmail.com</a></li>
+            </ul>
+          </div>
+          <div class="col-md-2 footer-content">
+            <p class="footer-title">探索</p>
+            <ul>
+              <li><a href="./about.html">認識我們</a></li>
+              <li><a href="">人員招募</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3 footer-content">
+            <p class="footer-title">追蹤我們</p>
+            <ul class="d-flex">
+              <li><a href="http://facebook.com"><i class="sns-icon fab fa-facebook"></i></a></li>
+              <li><a href="http://instagram.com"><i class="sns-icon fab fa-instagram"></i></a></li>
+              <li><i class="sns-icon fab fa-twitter"></i></li>
+              <li><i class="sns-icon fab fa-google-plus"></i></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <!-- cdn連bootstrap5的js -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- cdn連swiper輪播的js -->
+  <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+  <!-- cdn連vue的js -->
+  <script src='https://unpkg.com/vue/dist/vue.js'></script>
+  <!-- cdn連vue-calendar的js -->
+  <script src='https://unpkg.com/v-calendar'></script>
+  <!-- cdn連日期的js -->
+  <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+  <!-- cdn連動畫的js -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- 日期的js -->
+  <script src="./js/date.js"></script>
+  <!-- 輪播的js -->
+  <script src="./js/swiper.js"></script>
+  <!-- 主要的js -->
+  <script src="./js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>微旅行</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css' />
+  <!-- cdn連輪播的css -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+  <!-- cdn連動畫的css -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <!-- 這是主要的css -->
+  <link rel="stylesheet" href="./css/style.min.css">
+</head>
+
+<body>
+  <div id='app'>
+    <!-- 導覽列區 --------------------------------------------------------------------------------------------------------------------- -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-black-09">
+      <div class="container">
+        <a class="navbar-brand" href="/"><img src="./images/logo-w.png" width="100%" height="50" alt=""></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#wise-navbar"
+          aria-controls="wise-navbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="wise-navbar">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./about.html">認識知達</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                房型預訂
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="./room.html">一般訂房</a></li>
+                <li><a class="dropdown-item" href="./roompackage.html">套裝訂房</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./travel.html">微旅行</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./shop.html">購好物</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">周邊景點</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">達人手札</a>
+            </li>
+          </ul>
+          <!-- 登入/註冊 -->
+          <ul id="login_menu" class="navbar-nav menu-left ml-lg-3">
+            <li class="nav-item">
+              <a id="btn-login" class="nav-link" href="#login" data-bs-toggle="modal" data-bs-target="#user-login"><i
+                  class="fas fa-user fa-fw"></i>登入</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Modal 登入 -->
+    <div class="modal fade" id="user-login" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header text-center">
+            <div class="modal-title w-100 d-flex justify-content-center align-items-center"><img
+                src="./images/logo-b.png" class="me-3" width="90" alt=""><span class="fs-4 fw-bold">登入或註冊</span></div>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body py-7">
+            <form>
+              <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="loginEmail" name="loginEmail" placeholder="請輸入註冊信箱">
+                <label for="loginEmail">請輸入註冊信箱</label>
+              </div>
+              <div class="form-floating">
+                <input type="password" class="form-control" id="loginPassword" name="loginPassword" placeholder="請輸入密碼">
+                <label for="loginPassword">請輸入密碼</label>
+              </div>
+              <a href="#" class="my-3 d-block forget-pw">忘記密碼?</a>
+              <div class="d-grid gap-2">
+                <button class="btn btn-main-color fs-5 mb-1" type="button">登入</button>
+                <button class="btn btn-outline-main-color fs-5" type="button">註冊</button>
+              </div>
+            </form>
+            <!-- <div class="login-pseudo">
+              或
+            </div>
+            <div class="d-grid gap-2">
+              <a href="" class="btn btn-block btn-facebook mb-1">
+                <span class="fs-5"><i class="fab fa-facebook-square me-1"></i>用Facebook 帳號登入</span>
+              </a>
+              <a href="" class="btn btn-block btn-google">
+                <span class="fs-5"><i class="fab fa-google me-1"></i>用Google 帳號登入</span>
+              </a>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main-content">
+      <!-- parallax Banner -->
+      <div class="parallax">
+        <div class="package__parallax">
+          <div class="img-filter">
+            <div class="parallax-content">
+              <div class="parallax-title">微旅行</div>
+              <div class="parallax-text">Travel now</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- content -->
+      <div class="container-fluid">
+        <div class="container">
+          <div class="section-content">
+            <div class="section-header d-flex justify-content-center align-items-center">
+              <div class="fs-2 fw-bold">最新旅遊優惠</div>
+            </div>
+            <div class="swiper-box px-sm-3 px-md-0 mb-3 news-section">
+              <div class="swiper three-swiper three-pics-swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <a href="" class="overlap-hover-opacity">
+                      <img
+                        src="https://www.booking-wise0.com.tw/zhida/zida/images/eatplay/%E7%8E%A9%E4%BB%80%E9%BA%BC%E7%85%A7%E7%89%871.jpg"
+                        class="rounded-3" alt="最新旅遊優惠">
+                      <div class="overlap">
+                        <div class="overlap-ctr-title">
+                          紐約
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href="" class="overlap-hover-opacity">
+                      <img
+                        src="https://images.unsplash.com/photo-1534777367038-9404f45b869a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80"
+                        class="rounded-3" alt="最新旅遊優惠">
+                      <div class="overlap">
+                        <div class="overlap-ctr-title">
+                          戶外活動
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href="" class="overlap-hover-opacity">
+                      <img
+                        src="https://images.unsplash.com/photo-1594495894542-a46cc73e081a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEzfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60"
+                        class="rounded-3" alt="最新旅遊優惠">
+                      <div class="overlap">
+                        <div class="overlap-ctr-title">
+                          租車
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href="" class="overlap-hover-opacity">
+                      <img
+                        src="https://images.unsplash.com/photo-1489493887464-892be6d1daae?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHllbGxvdyUyMHRyYXZlbHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                        class="rounded-3" alt="最新旅遊優惠">
+                      <div class="overlap">
+                        <div class="overlap-ctr-title">
+                          大自然
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-button-next three-swiper-button-next custom-swiper-button-next"></div>
+              <div class="swiper-button-prev three-swiper-button-prev custom-swiper-button-prev"></div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid bg-gray-f5">
+        <div class="container">
+          <div class="section-content">
+            <div class="section-header d-flex justify-content-center align-items-end">
+              <div class="fs-2 fw-bold">行程介紹</div>
+            </div>
+            <div class="card" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+              <img
+                src="https://images.unsplash.com/photo-1534777367038-9404f45b869a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80"
+                class="travel-item img-cover rounded-3" alt="...">
+              <div class="card-img-overlay">
+                <p class="card-title fs-4">行程介紹</p>
+                <p class="card-text travel-intro-text text-more-three-line">
+                  同時致力將在地傳統文化藝術與工藝美學融入時尚潮流的休閒遊憩服務中，讓每一位客人都能深刻感受「頂真無價」「心享奢華」，工藝參訪導覽結合工藝體驗實作，打造一個「身、心、靈，絕佳五感」的住宿會館。</p>
+              </div>
+            </div>
+            <div class="row justify-content-center package-container pt-md-4 pt-lg-5">
+              <div class="col-lg-3" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+                <div class="itinerary-card row g-0">
+                  <div class="itinerary-card-img col-5 col-lg-12">
+                    <img
+                      src="https://images.unsplash.com/photo-1521579880562-101f47676ee1?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8dHJhdmVsaW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                      alt="行程照片" class="img-fluid img-cover">
+                  </div>
+                  <div class="itinerary-card-body col-7 col-lg-12">
+                    <p class="itinerary-card-title text-more-two-line">玩家吳德源帶路～雲南 -
+                      東川紅土地.元陽梯田.羅平油菜花13日羅平油菜花13日羅平油菜花13日羅平油菜花13日
+                    </p>
+                    <div class="text-gray-666 itinerary-location"><i class="fas fa-map-marker-alt me-1"></i>台灣，澎湖</div>
+                    <div class="discount-tag">
+                      <span><i class="fas fa-gift me-1"></i>贈送口罩</span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-end">
+                      <div class="itinerary-badge"><span class="badge bg-danger">3 Days</span></div>
+                      <div class="fw-bold itinerary-price">
+                        TWD <span class="text-danger">1500</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+                <div class="itinerary-card row g-0">
+                  <div class="itinerary-card-img col-5 col-lg-12">
+                    <img
+                      src="https://images.unsplash.com/photo-1509529711801-deac231925ac?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1500&amp;q=80"
+                      alt="行程照片" class="img-fluid img-cover">
+                  </div>
+                  <div class="itinerary-card-body col-7 col-lg-12">
+                    <p class="itinerary-card-title text-more-two-line">玩家吳德源帶路～雲南 -
+                      東川紅土地.元陽梯田.羅平油菜花13日羅平油菜花13日羅平油菜花13日羅平油菜花13日
+                    </p>
+                    <div class="text-gray-666 itinerary-location"><i class="fas fa-map-marker-alt me-1"></i>台灣，澎湖</div>
+                    <div class="discount-tag">
+                      <span><i class="fas fa-gift me-1"></i>贈送口罩</span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-end">
+                      <div class="itinerary-badge"><span class="badge bg-danger">3 Days</span></div>
+                      <div class="fw-bold itinerary-price">
+                        TWD <span class="text-danger">1500</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+                <div class="itinerary-card row g-0">
+                  <div class="itinerary-card-img col-5 col-lg-12">
+                    <img
+                      src="https://images.unsplash.com/photo-1553913861-c0fddf2619ee?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80"
+                      alt="行程照片" class="img-fluid img-cover">
+                  </div>
+                  <div class="itinerary-card-body col-7 col-lg-12">
+                    <p class="itinerary-card-title text-more-two-line">玩家吳德源帶路～雲南 -
+                      東川紅土地.元陽梯田.羅平油菜花13日羅平油菜花13日羅平油菜花13日羅平油菜花13日
+                    </p>
+                    <div class="text-gray-666 itinerary-location"><i class="fas fa-map-marker-alt me-1"></i>台灣，澎湖</div>
+                    <div class="discount-tag">
+                      <span><i class="fas fa-gift me-1"></i>贈送口罩</span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-end">
+                      <div class="itinerary-badge"><span class="badge bg-danger">3 Days</span></div>
+                      <div class="fw-bold itinerary-price">
+                        TWD <span class="text-danger">1500</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+                <div class="itinerary-card row g-0">
+                  <div class="itinerary-card-img col-5 col-lg-12">
+                    <img
+                      src="https://images.unsplash.com/photo-1474218861938-d6b14818c8e2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1778&q=80"
+                      alt="行程照片" class="img-fluid img-cover">
+                  </div>
+                  <div class="itinerary-card-body col-7 col-lg-12">
+                    <p class="itinerary-card-title text-more-two-line">玩家吳德源帶路～雲南 -
+                      東川紅土地.元陽梯田.羅平油菜花13日羅平油菜花13日羅平油菜花13日羅平油菜花13日
+                    </p>
+                    <div class="text-gray-666 itinerary-location"><i class="fas fa-map-marker-alt me-1"></i>台灣，澎湖</div>
+                    <div class="discount-tag">
+                      <span><i class="fas fa-gift me-1"></i>贈送口罩</span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-end">
+                      <div class="itinerary-badge"><span class="badge bg-danger">3 Days</span></div>
+                      <div class="fw-bold itinerary-price">
+                        TWD <span class="text-danger">1500</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+                <div class="itinerary-card row g-0">
+                  <div class="itinerary-card-img col-5 col-lg-12">
+                    <img
+                      src="https://images.unsplash.com/photo-1476362174823-3a23f4aa6d76?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80"
+                      alt="行程照片" class="img-fluid img-cover">
+                  </div>
+                  <div class="itinerary-card-body col-7 col-lg-12">
+                    <p class="itinerary-card-title text-more-two-line">玩家吳德源帶路～雲南 -
+                      東川紅土地.元陽梯田.羅平油菜花13日羅平油菜花13日羅平油菜花13日羅平油菜花13日
+                    </p>
+                    <div class="text-gray-666 itinerary-location"><i class="fas fa-map-marker-alt me-1"></i>台灣，澎湖</div>
+                    <div class="discount-tag">
+                      <span><i class="fas fa-gift me-1"></i>贈送口罩</span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-end">
+                      <div class="itinerary-badge"><span class="badge bg-danger">3 Days</span></div>
+                      <div class="fw-bold itinerary-price">
+                        TWD <span class="text-danger">1500</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+                <div class="itinerary-card row g-0">
+                  <div class="itinerary-card-img col-5 col-lg-12">
+                    <img
+                      src="https://images.unsplash.com/photo-1507671280192-5900ae887d3d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTN8fHRyYXZlbGluZ3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                      alt="行程照片" class="img-fluid img-cover">
+                  </div>
+                  <div class="itinerary-card-body col-7 col-lg-12">
+                    <p class="itinerary-card-title text-more-two-line">玩家吳德源帶路～雲南 -
+                      東川紅土地.元陽梯田.羅平油菜花13日羅平油菜花13日羅平油菜花13日羅平油菜花13日
+                    </p>
+                    <div class="text-gray-666 itinerary-location"><i class="fas fa-map-marker-alt me-1"></i>台灣，澎湖</div>
+                    <div class="discount-tag">
+                      <span><i class="fas fa-gift me-1"></i>贈送口罩</span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-end">
+                      <div class="itinerary-badge"><span class="badge bg-danger">3 Days</span></div>
+                      <div class="fw-bold itinerary-price">
+                        TWD <span class="text-danger">1500</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+                <div class="itinerary-card row g-0">
+                  <div class="itinerary-card-img col-5 col-lg-12">
+                    <img
+                      src="https://images.unsplash.com/photo-1534970178856-2feaf2cda796?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzl8fHRyYXZlbGluZ3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                      alt="行程照片" class="img-fluid img-cover">
+                  </div>
+                  <div class="itinerary-card-body col-7 col-lg-12">
+                    <p class="itinerary-card-title text-more-two-line">玩家吳德源帶路～雲南 -
+                      東川紅土地.元陽梯田.羅平油菜花13日羅平油菜花13日羅平油菜花13日羅平油菜花13日
+                    </p>
+                    <div class="text-gray-666 itinerary-location"><i class="fas fa-map-marker-alt me-1"></i>台灣，澎湖</div>
+                    <div class="discount-tag">
+                      <span><i class="fas fa-gift me-1"></i>贈送口罩</span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-end">
+                      <div class="itinerary-badge"><span class="badge bg-danger">3 Days</span></div>
+                      <div class="fw-bold itinerary-price">
+                        TWD <span class="text-danger">1500</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+                <div class="itinerary-card row g-0">
+                  <div class="itinerary-card-img col-5 col-lg-12">
+                    <img
+                      src="https://images.unsplash.com/photo-1621692359226-070bd08a954d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fHRyYXZlbGluZ3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                      alt="行程照片" class="img-fluid img-cover">
+                  </div>
+                  <div class="itinerary-card-body col-7 col-lg-12">
+                    <p class="itinerary-card-title text-more-two-line">玩家吳德源帶路～雲南 -
+                      東川紅土地.元陽梯田.羅平油菜花13日羅平油菜花13日羅平油菜花13日羅平油菜花13日
+                    </p>
+                    <div class="text-gray-666 itinerary-location"><i class="fas fa-map-marker-alt me-1"></i>台灣，澎湖</div>
+                    <div class="discount-tag">
+                      <span><i class="fas fa-gift me-1"></i>贈送口罩</span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-end">
+                      <div class="itinerary-badge"><span class="badge bg-danger">3 Days</span></div>
+                      <div class="fw-bold itinerary-price">
+                        TWD <span class="text-danger">1500</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="section-footer">
+              <div class="d-grid gap-2 col-md-4 mx-auto">
+                <button class="btn btn-outline-main-color py-2" type="button">查看更多</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid">
+        <div class="container">
+          <div class="section-content">
+            <div class="section-header d-flex justify-content-center align-items-center">
+              <div class="fs-2 fw-bold">探索更多行程</div>
+            </div>
+            <div class="swiper-box">
+              <div class="swiper five-swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <a href="#" class="overlap-hover-opacity">
+                      <img
+                        src="https://images.unsplash.com/photo-1520986606214-8b456906c813?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80"
+                        alt="">
+                      <div class="overlap overlap-bg">
+                        <div class="overlap-btm-title">
+                          倫敦
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href="#" class="overlap-hover-opacity">
+                      <img
+                        src="https://images.unsplash.com/photo-1502783897899-5958a31ed82b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80"
+                        alt="">
+                      <div class="overlap overlap-bg">
+                        <div class="overlap-btm-title">
+                          巴黎
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href="#" class="overlap-hover-opacity">
+                      <img
+                        src="https://images.unsplash.com/photo-1504109586057-7a2ae83d1338?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1780&q=80"
+                        alt="">
+                      <div class="overlap overlap-bg">
+                        <div class="overlap-btm-title">
+                          日本
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href="#" class="overlap-hover-opacity">
+                      <img
+                        src="https://images.unsplash.com/photo-1474218861938-d6b14818c8e2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1778&q=80"
+                        alt="">
+                      <div class="overlap overlap-bg">
+                        <div class="overlap-btm-title">
+                          馬爾地夫
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href="#" class="overlap-hover-opacity">
+                      <img
+                        src="https://images.unsplash.com/photo-1474218861938-d6b14818c8e2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1778&q=80"
+                        alt="">
+                      <div class="overlap overlap-bg">
+                        <div class="overlap-btm-title">
+                          馬爾地夫
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href="#" class="overlap-hover-opacity">
+                      <img
+                        src="https://images.unsplash.com/photo-1474218861938-d6b14818c8e2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1778&q=80"
+                        alt="">
+                      <div class="overlap overlap-bg">
+                        <div class="overlap-btm-title">
+                          馬爾地夫
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-button-next five-swiper-button-next custom-swiper-button-next"></div>
+              <div class="swiper-button-prev five-swiper-button-prev custom-swiper-button-prev"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 回到頂端 -->
+    <div id="back-to-top" class="back-to-top">
+      <a href="#" class="d-block"><i class="fas fa-chevron-up"></i></a>
+    </div>
+    <!-- footer -->
+    <footer class="container-fluid footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-2 footer-content d-flex justify-content-center align-items-center">
+            <div class="footer-logo">
+              <img src="./images/logo-w.png" alt="">
+            </div>
+          </div>
+          <div class="col-md-5 footer-content">
+            <p class="footer-title">聯絡我們</p>
+            <ul>
+              <li><a href="https://goo.gl/maps/vW9JAQNGSKtnqCPPA" target="_blank"><i
+                    class="footer-icon fas fa-map-marker-alt"></i>地址:
+                  54246南投縣草屯鎮中正路574號1樓</a></li>
+              <li><a href="tel:0910123456"><i class="footer-icon fas fa-phone-alt"></i>電話: 049-230-6969</a></li>
+              <li><a href="mailto:zhida.2306969@gmail.com"><i class="footer-icon far fa-envelope"></i>email:
+                  zhida.2306969@gmail.com</a></li>
+            </ul>
+          </div>
+          <div class="col-md-2 footer-content">
+            <p class="footer-title">探索</p>
+            <ul>
+              <li><a href="./about.html">認識我們</a></li>
+              <li><a href="">人員招募</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3 footer-content">
+            <p class="footer-title">追蹤我們</p>
+            <ul class="d-flex">
+              <li><a href="http://facebook.com"><i class="sns-icon fab fa-facebook"></i></a></li>
+              <li><a href="http://instagram.com"><i class="sns-icon fab fa-instagram"></i></a></li>
+              <li><i class="sns-icon fab fa-twitter"></i></li>
+              <li><i class="sns-icon fab fa-google-plus"></i></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <!-- cdn連bootstrap5的js -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- cdn連輪播套件的js -->
+  <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+  <!-- cdn連動畫的js -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- swiper輪播的js -->
+  <script src="./js/swiper.js"></script>
+  <!-- aos動畫套件的js -->
+  <script src="./js/aos.js"></script>
+  <!-- 主要的js -->
+  <script src="./js/main.js"></script>
+</body>
+
+</html>
