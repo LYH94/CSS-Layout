@@ -1,0 +1,56 @@
+.bigThumb {
+  height: 200px;
+  width: 100%;
+
+  @include media-breakpoint-up(md) {
+    height: 300px;
+  }
+}
+
+.smallThumbs {
+  height: 100px;
+  box-sizing: border-box;
+  padding: 10px 0;
+  background: #000;
+  margin-bottom: 1rem;
+}
+
+.smallThumbs .swiper-slide {
+  width: 25%;
+  height: 100%;
+  opacity: 0.4;
+}
+
+.smallThumbs .swiper-slide-thumb-active {
+  opacity: 1;
+}
+
+.bigThumb-swiper-button-next,
+.bigThumb-swiper-button-prev {
+  color: rgba(255, 255, 255, 0.7);
+  &::after {
+    font-size: 1.5rem;
+  }
+}
+
+.activity-badge {
+  font-size: .9rem;
+  background: #fddecd;
+  white-space: nowrap;
+  color: #933504;
+}
+
+.package__activity-header {
+  position: relative;
+  padding-left: 1rem;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    border-radius: 3px;
+    background-color: #ba0c2f;
+  }
+}

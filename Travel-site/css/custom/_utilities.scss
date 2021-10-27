@@ -1,0 +1,115 @@
+$utilities: map-merge(
+  $utilities,
+  (
+    'm-letter-spacing': (
+      responsive: true,
+      property: letter-spacing,
+      class: tracking,
+      values: (
+        tighter: -0.05em,
+        tight: -0.025em,
+        normal: 0em,
+        wide: 0.025em,
+        wider: 0.05em,
+        widest: 0.1em,
+      ),
+    ),
+    'm-font-size': (
+      responsive: true,
+      property: font-size,
+      class: fs,
+      values: (
+        xs: $font-size-base * 0.75,
+        sm: $font-size-base * 0.875,
+        lg: $font-size-base * 1.125,
+        xl: $font-size-base * 1.25,
+        2xl: $font-size-base * 1.5,
+        3xl: $font-size-base * 1.875,
+        4xl: $font-size-base * 2.25,
+        5xl: $font-size-base * 2.5,
+        6xl: $font-size-base * 3,
+        7xl: $font-size-base * 4,
+        8xl: $font-size-base * 5,
+      ),
+    ),
+    'object-fit': (
+      property: object-fit,
+      class: object,
+      values: (
+        contain,
+        cover,
+        fill,
+        none,
+        scale-down,
+      ),
+    ),
+    'm-rounded': (
+      responsive: true,
+      property: border-radius,
+      class: rounded,
+      values: (
+        4: .5rem,
+        circle: 50%,
+        pill: $border-radius-pill,
+      ),
+    ),
+    'm-rounded-top': (
+      responsive: true,
+      property: border-top-left-radius border-top-right-radius,
+      class: rounded-top,
+      values: (
+        null: $border-radius,
+        0: 0,
+        1: $border-radius-sm,
+        2: $border-radius,
+        3: $border-radius-lg,
+        4: .5rem
+      )
+    ),
+    'm-rounded-end': (
+      responsive: true,
+      property: border-top-right-radius border-bottom-right-radius,
+      class: rounded-end,
+      values: (
+        null: $border-radius,
+        0: 0,
+        1: $border-radius-sm,
+        2: $border-radius,
+        3: $border-radius-lg,
+        4: .5rem
+      )
+    ),
+    'm-rounded-bottom': (
+      responsive: true,
+      property: border-bottom-right-radius border-bottom-left-radius,
+      class: rounded-bottom,
+      values: (
+        null: $border-radius,
+        0: 0,
+        1: $border-radius-sm,
+        2: $border-radius,
+        3: $border-radius-lg,
+        4: .5rem
+      )
+    ),
+    'm-rounded-start': (
+      responsive: true,
+      property: border-bottom-left-radius border-top-left-radius,
+      class: rounded-start,
+      values: (
+        null: $border-radius,
+        0: 0,
+        1: $border-radius-sm,
+        2: $border-radius,
+        3: $border-radius-lg,
+        4: .5rem
+      )
+    ),
+    'm-border-width': (
+      responsive: true,
+      property: border-width,
+      class: border,
+      values: $border-widths
+    ),
+  )
+);

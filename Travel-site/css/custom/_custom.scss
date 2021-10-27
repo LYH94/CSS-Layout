@@ -1,0 +1,510 @@
+$box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+$border: 1px solid $black;
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
+  height: 100vh;
+  position: relative;
+  overflow-y: scroll;
+}
+
+#app {
+  height: 100%;
+}
+
+.top-container {
+  margin-top: 76px;
+  @include media-breakpoint-up (md) {
+    margin-top: 86px;
+  }
+}
+
+// btn
+.btn,
+.btn-close {
+  &:focus {
+    box-shadow: none !important;
+  }
+}
+
+.btn-main-color {
+  color: #fff;
+  &:hover, &:focus {
+    color: #fff;
+  }
+}
+
+.btn-outline-main-color {
+  &:hover, &:focus {
+    color: #fff;
+  }
+}
+
+// accordion
+.accordion-button {
+  color: $black;
+  background-color: #feeee6;
+}
+
+.accordion-button:not(.collapsed) {
+  color: #762a03;
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    .p-centered#{$infix}{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+    }
+  }
+}
+
+// list group
+@include media-breakpoint-only(xs) {
+  .custom-list-group-horizontal {
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    .list-group-item {
+      flex: 1 1 auto;
+      border-width: 1px;
+    }
+  }
+}
+
+// a
+a {
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  &:hover {
+    color: inherit;
+  }
+}
+
+// img
+.img-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+// 置入 google map
+.embed-responsive {
+  width: 100%;
+  height: 300px;
+
+  @include media-breakpoint-up(md) {
+    width: 100%;
+    height: 400px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    width: 100%;
+    height: 500px;
+  }
+}
+
+// 客制網格 swiper 的格數大小
+.custom-row-swiper {
+  @include row-cols(1.5); 
+  
+  @include media-breakpoint-up(md) {
+    @include row-cols(2.5); 
+  }
+
+  @include media-breakpoint-up(lg) {
+    @include row-cols(5); 
+  }
+}
+
+// 超出欄位時折行
+.ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.text-more-two-line {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.text-more-three-line {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+// 卡片照片遮罩
+.card-img-overlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: #fff;
+  background: linear-gradient(transparent 40%, rgba(0,0,0,0.9));
+}
+
+// 照片遮罩
+.overlap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.overlap-bg {
+  background: linear-gradient(transparent 50%, rgba(0,0,0,0.7));
+}
+
+.overlap-hover-opacity {
+  transition: all .2s ease-out;
+  &:hover {
+    img {
+      opacity: 0.7;
+    }
+  }
+}
+
+.overlap-hover-blur {
+  transition: all .3s ease-out;
+  .overlap-btm-text {
+    display: none;
+  }
+  &:hover {
+    background-color: rgba(0, 0, 0, .25);
+    backdrop-filter: blur(5px);
+    .overlap-btm-title {
+      top: 20%;
+    }
+    .overlap-btm-text {
+      display: block;
+      padding: 5px 15px;
+      transition: 1s all;
+    }
+  }
+}
+
+.overlap-ctr-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 1.5rem;
+  color: #fff;
+  transform: translate(-50%, -50%);
+  text-shadow: 2px 2px 0px rgba(0, 0, 0,.3);
+
+  @include media-breakpoint-up(lg) {
+    font-size: 1.75rem;
+  }
+}
+
+.overlap-btm-title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 5px 15px;
+  color: #fff;
+  font-size: 24px;
+  transition: .2s all;
+}
+
+.overlap-btm-text {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  color: #fff;
+  transition: .2s all;
+}
+
+// 偽元素
+.login-pseudo {
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  color: $gray-600;
+  padding: 1.25rem 0;
+}
+
+.login-pseudo::before,
+.login-pseudo::after {
+  content: '';
+  flex: 1;
+  height: 0.5px;
+  background: $gray-400;
+}
+
+.login-pseudo::before {
+  margin-right: 30px;
+}
+
+.login-pseudo::after {
+  margin-left: 30px;
+}
+
+.title-pseudo {
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  color: $black-333;
+  font-weight: 700;
+}
+
+.title-pseudo::before,
+.title-pseudo::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #000;
+}
+
+.title-pseudo::before {
+  margin-right: 30px;
+}
+
+.title-pseudo::after {
+  margin-left: 30px;
+}
+
+.description-header::after {
+  content: "";
+  display: block;
+  height: 4px;
+  margin: 10px auto;
+  width: 70px;
+  background: #bf972b;
+}
+
+// 底線
+.underline_section-header {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  &:after {
+    position: absolute;
+    content: '';
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #000;
+  }
+}
+
+// swiper自訂
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-box {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  margin: 0 auto;
+}
+
+.swiper_card-img {
+  max-height: 150px;
+  min-height: 150px;
+
+  @include media-breakpoint-up(md) {
+    max-height: 200px;
+    min-height: 200px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    max-height: 250px;
+    min-height: 250px;
+  }
+}
+
+.swiper-slide .card{
+  border: none;
+  transition: all .2s ease;
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $box-shadow;
+  }
+}
+
+.swiper-pagination-bullet-active {
+  background: #fff;
+}
+
+// 指示器自訂
+.custom-swiper-button-next.swiper-button-disabled,
+.custom-swiper-button-prev.swiper-button-disabled {
+  display: none;
+}
+
+.custom-swiper-button-next,
+.custom-swiper-button-prev {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: $box-shadow;
+  z-index: 1;
+  &:after {
+    color: $black-333;
+    font-size: 1rem;
+  }
+}
+
+.custom-swiper-button-next {
+  right: -20px;
+
+  @include media-breakpoint-up(lg) {
+    top: 55%;
+    right: -55px;
+  }
+
+}
+
+.custom-swiper-button-prev {
+  left: -20px;
+
+  @include media-breakpoint-up(lg) {
+    top: 55%;
+    left: -55px;
+  }
+}
+
+.cardImgSwiper-button-next,
+.cardImgSwiper-button-prev {
+  color: rgba(255, 255, 255, 0.9);
+  &::after {
+    font-size: 1rem;
+  }
+}
+
+.three-swiper .swiper-slide img {
+  height: 250px;
+  max-height: 250px;
+}
+
+.five-swiper .swiper-slide {
+  height: 270px;
+  max-height: 270px;
+}
+
+// navbar fixed問題
+.navbar-margin {
+  margin-top: 76px;
+
+  @include media-breakpoint-up(md) {
+    margin-top: 86px;
+  }
+}
+
+.navbar-brand img {
+  @include media-breakpoint-up(md) {
+    height: 60px;
+  }
+}
+
+// nav滾動
+.nav-scroll {
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+// 視差
+.parallax {
+  width: 100%;
+  height: 35vh;
+  position: relative;
+  margin-top: 76px;
+
+  @include media-breakpoint-up(md) {
+    margin-top: 86px;
+  }
+  
+  @include media-breakpoint-up(lg) {
+    height: 50vh;
+  }
+}
+
+.parallax-content {
+  border-bottom: 4px solid #fff;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.img-filter {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+// 共用搜尋欄search-bar
+.search-bar {
+  color: $gray-600;
+  position: absolute;
+  background: $white;
+  box-shadow: $box-shadow;
+  width: 100%;
+  z-index: 2;
+  padding: 1rem;
+
+  @include media-breakpoint-up(md) {
+    top: -140px;
+    padding: 1.5rem;
+    font-size: 1.25rem;
+  }
+
+  @include media-breakpoint-up(lg){
+    top: -60px;
+  }
+
+  .form-select {
+    padding: .375rem 0;
+  }
+  .form-select,
+  .form-control {
+    border: none;
+    margin-bottom: .5rem;
+    padding: .375rem 0;
+
+    @include media-breakpoint-up(md) {
+      font-size: 1.5rem;
+    }
+
+    &::placeholder {
+      color: #333;
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .search-bar__booking-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70%;
+  }
+}

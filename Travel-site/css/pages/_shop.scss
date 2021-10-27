@@ -1,0 +1,43 @@
+// shop.html ----------------------------------------------------------
+.shop__parallax {
+  width: 100%;
+  height: 100%;
+  background: url(../images/shop01.jpeg) no-repeat center/cover;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.shop-card {
+  background: #fff;
+  border-radius: .25rem;
+  border: 1px solid rgba(0,0,0,0.125);
+  margin-bottom: 1rem;
+}
+
+.shop-card-img {
+  height: 250px;
+  background: rgb(134, 142, 150);
+  img {
+    border-radius: .25rem .25rem 0 0;
+  }
+}
+
+.shop-card-body {
+  padding: 1rem;
+}
+
+.shop-card-title {
+  min-height: 60px;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: $black-333;
+}
+
+.shop-price {
+  font-size: 1.25rem;
+}
+
+.shop-fullImg {
+  width: 100%;
+  background: linear-gradient(rgba(8, 8, 27, 0.6) 0%, rgb(8, 8, 27) 100%), url(../images/shop02.jpeg) no-repeat center/cover;
+}

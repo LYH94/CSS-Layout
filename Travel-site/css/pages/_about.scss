@@ -1,0 +1,64 @@
+// about.html --------------------------------------------------------
+.about__parallax {
+  width: 100%;
+  height: 100%;
+  background: url(../images/about01.jpeg) no-repeat center/cover;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.about__card-img {
+  height: 200px;
+  @include media-breakpoint-up(md) {
+    height: 400px;
+    max-height: 400px;
+  }
+}
+
+.about__card-text {
+  @include media-breakpoint-up(md) {
+    display: -webkit-box;
+    -webkit-line-clamp: 11;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+.first-letter {
+  @include media-breakpoint-up(md) {
+    &::first-letter {
+      padding-right:5px;
+      font-weight: bold;
+      font-size: 180%;
+    }
+  }
+}
+
+.about__location-box {
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  background: $black-333;
+  display: flex;
+  flex-direction: column;
+}
+
+.about__location-header {
+  position: relative;
+  font-weight: bold;
+  &::after {
+    content: '';
+    position: absolute;
+    background: $gold;
+    width: 100%;
+    height: 4px;
+  }
+}
+
+.about__location-text {
+  @include media-breakpoint-up(md) {
+    position: relative;
+    top: 30%;
+  }
+}
+
